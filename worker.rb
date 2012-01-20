@@ -70,7 +70,8 @@ post_data = {
   id: -1,
   kind: "reserve",
   startTime: "#{from}:00",
+  url: url
 }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{room_id}"
 
 # TODO: Make it work
-# puts RestClient.post(url, post_data, cookies: cookies)
+puts RestClient.post(url, post_data, cookies: cookies)
