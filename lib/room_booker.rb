@@ -1,9 +1,7 @@
 require "rest-client"
 require "nokogiri"
-require "yaml"
-require "uri"
 require "cgi"
-require "acts_as_chain"
+
 class RoomBooker
   def initialize(args)
     args.keys.each { |name| instance_variable_set "@" + name.to_s, args[name] }
@@ -46,8 +44,9 @@ class RoomBooker
       id: -1,
       kind: "reserve",
       startTime: "#{hour_from}:00",
-      url: url
-    }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{id}"
+      url: url,
+      o: ["160177.184", "203433.185", id]
+    }
 
     !! RestClient.post(url, post_data, cookies: authenticate)
   end
