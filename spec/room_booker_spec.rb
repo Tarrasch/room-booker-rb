@@ -1,0 +1,3 @@
+describe RoomBooker do
+  
+end
