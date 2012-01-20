@@ -4,7 +4,7 @@ require "yaml"
 require "uri"
 require "cgi"
 
-data = {    
+data = {
   authServer: "student",
   username: "oleander",
   password: ARGV.first,
