@@ -3,6 +3,15 @@ require "nokogiri"
 require "cgi"
 
 class RoomBooker
+  #
+  # @args Hash {
+  #   username: "username",
+  #   password: "password",
+  #   from: "12",
+  #   to: "15",
+  #   date: 5.days.from_now
+  # }
+  #
   def initialize(args)
     args.keys.each { |name| instance_variable_set "@" + name.to_s, args[name] }
     raise "#from can't be smaller than #to" if hour_from - hour_to > 0
