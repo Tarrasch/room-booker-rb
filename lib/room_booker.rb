@@ -45,8 +45,7 @@ class RoomBooker
       kind: "reserve",
       startTime: "#{hour_from}:00",
       url: url,
-      o: ["160177.184", "203433.185", id]
-    }
+    }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{id}"
 
     !! RestClient.post(url, post_data, cookies: authenticate)
   end
