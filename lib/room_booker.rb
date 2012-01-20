@@ -5,8 +5,10 @@ require "uri"
 require "cgi"
 require "acts_as_chain"
 class RoomBooker
-  acts_as_chain :username, :password, :from, :to
-    
+  def initialize(args)
+    args.keys.each { |name| instance_variable_set "@" + name.to_s, args[name] }
+  end
+  
   def book!(room)
     found_id = @rooms.select{ |r| r[:number] == room }.first
     raise "invalid room" unless found_id
