@@ -7,7 +7,11 @@ require "acts_as_chain"
 class RoomBooker
   acts_as_chain :username, :password, :from, :to
     
-  def book
+  def book!(room)
+    found_id = @rooms.select{ |r| r[:number] == room }.first
+    raise "invalid room" unless found_id
+    id = found_id[:id]
+    
     url = %w{
       https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/r.html?
       sid=1002&
@@ -24,24 +28,24 @@ class RoomBooker
       o=%s&
       nocache=3
     }.join % [
-      @from.strftime("%Y%m%d"),
-      "#{@from.hour}:0", 
-      "#{@to.hour}:0", 
+      date,
+      "#{hour_from}:0", 
+      "#{hour_to}:0", 
       "160177.184,pr101", 
       "203433.185,ks91084", 
-      "#{room_id},#{room}"
-    ].map { |x| GGI.escape(x) }
-
+      "#{id},#{room}"
+    ].map { |x| CGI.escape(x) }
+    
     post_data = {
       dates: date,
-      endTime: "#{to}:00",
+      endTime: "#{hour_to}:00",
       fe2: nil,
       fe8: nil,
       id: -1,
       kind: "reserve",
-      startTime: "#{from}:00",
+      startTime: "#{hour_from}:00",
       url: url
-    }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{room_id}"
+    }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{id}"
 
     !! RestClient.post(url, post_data, cookies: authenticate)
   end
@@ -63,11 +67,13 @@ class RoomBooker
       dates=%s&
       starttime=%s:0&
       endtime=%s:0
-    }.join % [@from.strftime("%Y%m%d"), @from.hour, @to.hour]
+    }.join % [date, hour_from, hour_to]
 
     doc = Nokogiri::HTML(RestClient.get(rooms, cookies: authenticate))
     @rooms = doc.css(".infoboxtitle").map do |r| 
+      # Room number "5210"
       number = r.text
+      # Room object id 1224631.186
       id = doc.at_css("[data-name='#{number}']").attr("data-id")
       {id: id, number: number}
     end
@@ -78,6 +84,18 @@ class RoomBooker
 private
   def room_numbers
     @rooms.map{|room| room[:number]}
+  end
+  
+  def date
+    @from.strftime("%Y%m%d")
+  end
+  
+  def hour_from
+    @from.hour
+  end
+  
+  def hour_to
+    @to.hour
   end
   
   def authenticate
