@@ -87,15 +87,15 @@ private
   end
   
   def date
-    @from.strftime("%Y%m%d")
+    (@from.is_a?(Time) ? @from : @date).strftime("%Y%m%d")
   end
   
   def hour_from
-    @from.hour
+    @from.is_a?(Time) ? @from.hour : @from
   end
   
   def hour_to
-    @to.hour
+    @to.is_a?(Time) ? @to.hour : @to
   end
   
   def authenticate
