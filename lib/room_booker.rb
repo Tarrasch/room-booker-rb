@@ -8,6 +8,10 @@ class RoomBooker
     raise "#from can't be smaller than #to" if hour_from - hour_to > 0
   end
   
+  #
+  # @room String The room that should be booked
+  # @return Bool Did everything went okay?
+  #
   def book!(room)
     found_id = @rooms.select{ |r| r[:number] == room }.first
     raise "invalid room" unless found_id
@@ -51,6 +55,9 @@ class RoomBooker
     !! RestClient.post(url, post_data, cookies: authenticate)
   end
   
+  #
+  # @return Array<String> A list of rooms ["1234"]
+  #
   def rooms
     return room_numbers if @rooms
     rooms = %w{
@@ -82,6 +89,9 @@ class RoomBooker
     return room_numbers
   end
   
+  #
+  # @return Bool Is the given username and password valid?
+  #
   def valid_credentials?
     authenticate.any?
   end
