@@ -7,12 +7,47 @@ require "acts_as_chain"
 class RoomBooker
   acts_as_chain :username, :password, :from, :to
     
-  def perform
-    
+  def book
+    url = %w{
+      https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/r.html?
+      sid=1002&
+      h=t&
+      id=-1&
+      step=2&
+      cn=0&
+      id=-1&
+      dates=%s&
+      startTime=%s&
+      endTime=%s&
+      o=%s&
+      o=%s&
+      o=%s&
+      nocache=3
+    }.join % [
+      @from.strftime("%Y%m%d"),
+      "#{@from.hour}:0", 
+      "#{@to.hour}:0", 
+      "160177.184,pr101", 
+      "203433.185,ks91084", 
+      "#{room_id},#{room}"
+    ].map { |x| GGI.escape(x) }
+
+    post_data = {
+      dates: date,
+      endTime: "#{to}:00",
+      fe2: nil,
+      fe8: nil,
+      id: -1,
+      kind: "reserve",
+      startTime: "#{from}:00",
+      url: url
+    }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{room_id}"
+
+    !! RestClient.post(url, post_data, cookies: authenticate)
   end
   
   def rooms
-    return @rooms if @rooms
+    return room_numbers if @rooms
     rooms = %w{
       https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/objects.html?
       max=15&
@@ -31,11 +66,20 @@ class RoomBooker
     }.join % [@from.strftime("%Y%m%d"), @from.hour, @to.hour]
 
     doc = Nokogiri::HTML(RestClient.get(rooms, cookies: authenticate))
-    # A list of rooms ["5013", "..."]
-    @rooms = doc.css(".infoboxtitle").map{|r| r.text}
+    @rooms = doc.css(".infoboxtitle").map do |r| 
+      number = r.text
+      id = doc.at_css("[data-name='#{number}']").attr("data-id")
+      {id: id, number: number}
+    end
+    
+    return room_numbers
   end
   
 private
+  def room_numbers
+    @rooms.map{|room| room[:number]}
+  end
+  
   def authenticate
     return @cookies if @cookies
     data = {
