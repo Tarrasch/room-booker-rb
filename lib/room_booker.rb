@@ -5,6 +5,7 @@ require "cgi"
 class RoomBooker
   def initialize(args)
     args.keys.each { |name| instance_variable_set "@" + name.to_s, args[name] }
+    raise "#from can't be smaller than #to" if hour_from - hour_to > 0
   end
   
   def book!(room)
@@ -81,6 +82,10 @@ class RoomBooker
     return room_numbers
   end
   
+  def valid_credentials?
+    authenticate.any?
+  end
+  
 private
   def room_numbers
     @rooms.map{|room| room[:number]}
@@ -91,11 +96,11 @@ private
   end
   
   def hour_from
-    @from.is_a?(Time) ? @from.hour : @from
+    @from.is_a?(Time) ? @from.hour : @from.to_i
   end
   
   def hour_to
-    @to.is_a?(Time) ? @to.hour : @to
+    @to.is_a?(Time) ? @to.hour : @to.to_i
   end
   
   def authenticate

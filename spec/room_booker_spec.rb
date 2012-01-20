@@ -39,4 +39,37 @@ describe RoomBooker do
       it { subject.rooms.each{|room| room.should be_instance_of(String)} }
     end
   end
+  
+  describe "other" do
+    it "does not except negative times" do
+      lambda {
+        RoomBooker.new({
+          from: "19",
+          to: "15"
+        })
+      }.should raise_error(RuntimeError, "#from can't be smaller than #to")
+    end
+    
+    it "should not be valid" do
+      VCR.use_cassette("invalid") do
+        RoomBooker.new({
+          from: "14",
+          to: "15",
+          password: "invalid",
+          username: "invalid"
+        }).valid_credentials?.should be_false
+      end
+    end
+    
+    it "should be valid" do
+      VCR.use_cassette("valid") do
+        RoomBooker.new({
+          from: "14",
+          to: "15",
+          password: $password,
+          username: $username
+        }).valid_credentials?.should be_true
+      end
+    end
+  end
 end

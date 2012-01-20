@@ -1,0 +1,36 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://web.timeedit.se:443/chalmers_se/db1/b1/
+    body: authServer=student&username=<username>&password=<password>&fragment=&x=0&y=0
+    headers: 
+      accept: 
+      - "*/*; q=0.5, application/xml"
+      accept-encoding: 
+      - gzip, deflate
+      content-length: 
+      - "79"
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 303
+      message: The response to the request can be found under a different URI
+    headers: 
+      server: 
+      - nginx/0.7.62
+      date: 
+      - Fri, 20 Jan 2012 23:47:50 GMT
+      connection: 
+      - keep-alive
+      content-length: 
+      - "0"
+      set-cookie: 
+      - TimeEditTICKETchalmers_sedb1=63b8bc817cd9679adbb4702d339964ac7584909470106936307; Path=/; HttpOnly
+      location: 
+      - https://web.timeedit.se/chalmers_se/db1/b1/
+      accept-ranges: 
+      - bytes
+    body: 
+    http_version: "1.1"
