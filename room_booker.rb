@@ -60,7 +60,7 @@ url = %w{
   o=%s&
   o=%s&
   nocache=3
-}.join % [date, CGI.escape("#{from}:0"), CGI.escape("#{to}:0"), CGI.escape("160177.184,pr101"), CGI.escape("203433.185,ks91084"), CGI.escape("#{room_id},#{room}")]
+}.join % [date, "#{from}:0", "#{to}:0", "160177.184,pr101", "203433.185,ks91084", "#{room_id},#{room}"].map { |x| GGI.escape(x) }
 
 post_data = {
   dates: date,
@@ -73,5 +73,4 @@ post_data = {
   url: url
 }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{room_id}"
 
-# TODO: Make it work
 puts RestClient.post(url, post_data, cookies: cookies)
