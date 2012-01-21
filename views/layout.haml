@@ -6,6 +6,11 @@
     %script{src: "/javascripts/jcal.js"}
     %script{src: "/javascripts/application.js"}
     %link{href: "/stylesheets/jcal.css", rel: "stylesheet", media: "screen"}
+    %link{href: "/stylesheets/application.css", rel: "stylesheet", media: "screen"}
     %title Title
   %body
-    = yield
+    #main
+      #wrap
+        = yield
+      #footer
+        Contact | Fork me

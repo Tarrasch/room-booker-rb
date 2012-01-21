@@ -54,11 +54,11 @@
 }
 /* do not edit - this enables the new month combobox selector */
 .jCal .monthSelector {
-	position:absolute;
+	position:relative;
 }
 /* do not edit - this enables the new month combobox selector "shadow" for capturing auto-hide */
 .jCal .monthSelectorShadow {
-	position:absolute;
+	position:relative;
 	background:#808080;
 	padding:0px;
 }
@@ -149,6 +149,6 @@
 }
 /* no need to change - this is for carousel opacity */
 .jCalMask, .jCalMove {
-	position:absolute;
+	position:relative;
 	overflow:hidden;
 }
