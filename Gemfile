@@ -3,6 +3,7 @@ source :gemcutter
 gem "rest-client"
 gem "nokogiri"
 gem "sinatra"
+gem "haml"
 
 group :development do
   gem "shotgun"
