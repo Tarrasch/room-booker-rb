@@ -1,0 +1,18 @@
+%label{for: "calOneDays"} Day
+%select#calOneDays
+  - 10.times do |n|
+    %option{value: n}=n
+
+%label{for: "timespan-start"} Start hour
+%select#timespan-start
+  - 10.times do |n|
+    %option{value: n}=n
+
+%label{for: "timespan-end"} End hour
+%select#timespan-end
+  - 10.times do |n|
+    %option{value: n}=n
+
+%button#make-reservation{type: "button"} Make reservation
+%button#clear{type: "button"} Clear
+#calOne
