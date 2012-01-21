@@ -93,8 +93,10 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  acts_as_chain
   foreman
   haml
+  jsonify
   nokogiri
   rest-client
   rspec

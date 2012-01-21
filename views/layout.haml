@@ -5,14 +5,17 @@
     
     %script{src: "/javascripts/jquery.js"}
     %script{src: "/javascripts/jcal.js"}
-    %script{src: "/javascripts/application.js"}
     %script{src: "/javascripts/faye-browser-min.js"}
+    %script{src: "/javascripts/cookie.js"}
+    %script{src: "/javascripts/application.js"}
     
     %link{href: "/stylesheets/jcal.css", rel: "stylesheet", media: "screen"}
     %link{href: "/stylesheets/application.css", rel: "stylesheet", media: "screen"}
     
     %title TimeEdit V2.0.0
   %body
+    #debug
+      = request.cookies["uuid"]
     #main
       #wrap
         = yield

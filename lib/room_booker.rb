@@ -1,8 +1,11 @@
 require "rest-client"
 require "nokogiri"
 require "cgi"
+require "acts_as_chain"
 
 class RoomBooker
+  acts_as_chain :date
+  
   #
   # @args Hash {
   #   username: "username",
@@ -105,13 +108,23 @@ class RoomBooker
     authenticate.any?
   end
   
+  #
+  # @date String | Time
+  #
+  def date=(date)
+    @date = date
+  end
 private
   def room_numbers
     @rooms.map{|room| room[:number]}
   end
   
   def date
-    (@from.is_a?(Time) ? @from : @date).strftime("%Y%m%d")
+    if defined?(@date) and @date.is_a?(Time)
+      @date.strftime("%Y%m%d")
+    else
+      @from
+    end
   end
   
   def hour_from
