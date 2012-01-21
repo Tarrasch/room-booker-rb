@@ -36,8 +36,12 @@ room_booker.book!("1234") # => true
 - **username** (String) Chalmers id, CID
 - **password** (String) CID password.
 - **from** (Fixnum) When does it start? (24 hour clock).
-- **from** (Fixnum) When does it end? (24 hour clock).
+- **to** (Fixnum) When does it end? (24 hour clock).
 - **date** (Time) What day?
+
+### Other methods
+
+- **valid_credentials?** (Bool) Is the given username and password valid?
 
 ## Testing
 
