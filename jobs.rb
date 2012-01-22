@@ -8,7 +8,7 @@ include Stalker
 
 job "timeedit" do |args|
   sf = SecureFaye::Connect.new.
-    token("31033a4327cb9e0dcb2570bcfd0ffe24").
+    token(`echo $FAYE_TOKEN`.strip).
     server("http://localhost:9999/faye").
     channel("/reserve/" + args["uuid"])
   

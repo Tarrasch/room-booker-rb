@@ -9,8 +9,6 @@ set :scm, :git
 set :repository, "git@github.com:Tarrasch/room-booker-rb.git"
 set :branch, "master"
 
-set :whenever_command, "#{bundle_runner} whenever"
-
 # Config
 role :web, application
 role :app, application
