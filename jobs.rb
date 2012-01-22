@@ -6,10 +6,6 @@ require_relative "lib/room_booker"
 
 include Stalker
 
-error do |e, job, args|
-  puts "ERROR: #{e.message}"
-end
-
 job "timeedit" do |args|
   sf = SecureFaye::Connect.new.
     token("31033a4327cb9e0dcb2570bcfd0ffe24").
@@ -38,18 +34,20 @@ job "timeedit" do |args|
       rescue
         message = $!.message || "Something went wrong"
       ensure
-        message ||= "Everyting went okay!"
+        message ||= "valid"
       end
     else
       message = "No rooms found"
     end
     
-    sf.message({
+    hash = {
       type: "message",
       notification: message,
       room: room,
       day: day
-    }.to_json).send!
+    }
+    
+    sf.message(hash.to_json).send!
   end
   
   sf.message({

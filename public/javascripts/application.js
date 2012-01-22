@@ -27,14 +27,13 @@ $(function () {
       return;
     }
     
-    button.text("Hold on, making reservation");
+    button.text("Hold on");
     $.post("/reservation", {
       days: days,
       from: $("#timespan-start").val(),
       to: $("#timespan-end").val()
     }, function(data) {
       button.text(buttonData);
-      $(".selectedDay").removeClass("selectedDay");
     });
   });
   
@@ -44,10 +43,20 @@ $(function () {
 });
 
 $(function() {
-  var client = new Faye.Client("http://localhost:9999/faye");
-  
-  var subscription = client.subscribe("/reserve/" + $.cookie("uuid"), function(message) {
-    console.debug("OKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK");
-    console.debug("message", message);
+  var client, subscription, day, data;
+  client = new Faye.Client("http://localhost:9999/faye");
+  subscription = client.subscribe("/reserve/" + $.cookie("uuid"), function(message) {
+    message = JSON.parse(message)
+    if(message.type == "message" && message.notification){
+      day = new Date(parseInt(message.day, 10) * 1000);
+      data = $('[id*=d_' + (day.getMonth() + 1) + '_' + day.getDate() + '_' + day.getFullYear() + ']');
+      if(message.notification == "valid"){
+        data.css({"background-color": "green"});
+      } else {
+        data.css({"background-color": "red"});
+      }
+      
+      data.removeClass("selectedDay");
+    }
   });
 })

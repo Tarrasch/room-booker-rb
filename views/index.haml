@@ -3,16 +3,18 @@
   - 10.times do |n|
     %option{value: n}=n
 
-%label{for: "timespan-start"} Start hour
+%label{for: "timespan-start"} Start
 %select#timespan-start
-  - 10.times do |n|
+  - 25.times do |n|
     %option{value: n}=n
 
-%label{for: "timespan-end"} End hour
+%label{for: "timespan-end"} End
 %select#timespan-end
-  - 10.times do |n|
-    %option{value: n}=n
-
+  - 25.times do |n|
+    - if n == 23
+      %option{value: n, selected: true}=n
+    - else
+      %option{value: n}=n
 %button#make-reservation{type: "button"} Make reservation
 %button#clear{type: "button"} Clear
 #calOne

@@ -11,7 +11,7 @@ body {
   background-color: #e0e0e0; }
 
 #main {
-  width: 670px;
+  width: 520px;
   padding-top: 0;
   padding-right: 20px;
   padding-bottom: 20px;
@@ -20,7 +20,7 @@ body {
   position: relative;
   background-color: white; }
   #main #wrap {
-    width: 610px;
+    width: 460px;
     height: 250px;
     margin: 0 auto;
     padding-top: 40px;
