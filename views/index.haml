@@ -5,13 +5,19 @@
 
 %label{for: "timespan-start"} Start
 %select#timespan-start
+  - hour = Time.now.hour
   - 25.times do |n|
-    %option{value: n}=n
+    - if n == hour
+      %option{value: n, selected: true}=n
+    - else
+      %option{value: n}=n
     
 %label{for: "timespan-end"} End
 %select#timespan-end
+  - hour = Time.now.hour + 5
+  - hour = hour > 24 ? 23 : hour
   - 25.times do |n|
-    - if n == 23
+    - if n == hour % 24
       %option{value: n, selected: true}=n
     - else
       %option{value: n}=n

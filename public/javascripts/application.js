@@ -67,8 +67,11 @@ $(function () {
   });
   
   $("#clear").click(function() {
-    localStorage.setItem("reservations", "[]");
-    window.location.reload();
+    var con = confirm("Clear screen and reservations?");
+    if(con){
+      localStorage.setItem("reservations", "[]");
+      window.location.reload();
+    }
   });
 });
 
