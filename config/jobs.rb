@@ -9,7 +9,7 @@ include Stalker
 job "timeedit" do |args|
   sf = SecureFaye::Connect.new.
     token(`echo $FAYE_TOKEN`.strip).
-    server("http://localhost:9999/faye").
+    server("http://0.0.0.0:9999/faye").
     channel("/reserve/" + args["uuid"])
   
   rb = RoomBooker.new({
