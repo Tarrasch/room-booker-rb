@@ -1,6 +1,6 @@
 GIT
   remote: /Users/linus/Documents/Projekt/stalker/.git
-  revision: cbc3aa13af69e53e1b456d3e517103425c33a258
+  revision: f6e732eb97de678bdba317ab7a1cb587ecd2e202
   specs:
     stalker (0.9.0)
       beanstalk-client
