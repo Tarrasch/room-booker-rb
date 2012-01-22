@@ -4,6 +4,10 @@ require "yaml"
 require "uuid"
 require "stalker"
 
+if ENV["RACK_ENV"] == "production"
+  Stalker.connect("beanstalk://127.0.0.1:54132")
+end
+
 before do  
   uuid = request.cookies["uuid"]
   if not uuid or uuid.empty?
