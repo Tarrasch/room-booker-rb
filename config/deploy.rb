@@ -1,22 +1,47 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+require "bundler/capistrano"
 
-set :scm, :subversion
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :application, "timeedit.oleander.nu"
+set :domain, "timeedit.oleander.nu"
+set :bundle_runner, "/usr/local/rvm/bin/webmaster_bundle exec"
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+# Git
+set :scm, :git
+set :repository, "git@github.com:Tarrasch/room-booker-rb.git"
+set :branch, "master"
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
+set :whenever_command, "#{bundle_runner} whenever"
 
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+# Config
+role :web, application
+role :app, application
+role :db, application, :primary => true
+set :deploy_to,  "/opt/www/timeedit.oleander.nu"
+set :deploy_via, :remote_cache
+set :keep_releases, 5
+set :rails_env, "production"
+set :git_enable_submodules, 1
+set :git_shallow_clone, 1
+
+# User
+set :user, "webmaster"
+set :use_sudo, false
+
+# SSH
+set :port, 2222
+ssh_options[:paranoid] = false
+ssh_options[:forward_agent] = true
+
+# Bundler
+set :bundle_without, [:test, :development]
+set :bundle_flags,    "--deployment --without=development,test"
+
+namespace :deploy do
+  task :start, :roles => :app do ;end
+    
+  desc "Restarting passenger"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "cd #{deploy_to}/current && touch tmp/restart.txt"
+  end
+      
+  after "deploy:update", "deploy:cleanup"
+end
