@@ -6,6 +6,11 @@ a:visited {
   color: black;
 }
 
+#footer {
+  position: relative;
+  top: 10px;
+}
+
 body {
   margin: 0px 0 30px 0;
   background-color: #e0e0e0; }
