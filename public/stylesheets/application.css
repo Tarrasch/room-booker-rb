@@ -11,6 +11,28 @@ a:visited {
   top: 10px;
 }
 
+input {
+   padding: 0.5em;
+   line-height: 1.2em;
+   background: #fff;
+   -webkit-appearance: none;
+   -webkit-border-radius: 0.5em;
+}
+
+#username {
+  float: left;
+  width: 40%;
+  position: relative;
+  top: 20px;
+}
+
+#password {
+  float: right;
+  width: 40%;
+  position: relative;
+  top: 20px;
+}
+
 body {
   margin: 0px 0 30px 0;
   background-color: #e0e0e0; }

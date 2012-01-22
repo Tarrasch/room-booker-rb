@@ -32,7 +32,9 @@ $(function () {
       days: days,
       from: $("#timespan-start").val(),
       to: $("#timespan-end").val(),
-      floor: $("#floor").val()
+      floor: $("#floor").val(),
+      username: localStorage.getItem("username"),
+      password: localStorage.getItem("password")
     }, function(data) {
       button.text(buttonData);
     });
@@ -41,6 +43,15 @@ $(function () {
   $("#clear").click(function() {
     window.location.reload();
   });
+});
+
+$(function() {
+  $("#username, #password").keyup(function() {
+    localStorage.setItem($(this).attr("id"), $(this).val());
+  });
+  
+  $("#username").val(localStorage.getItem("username"));
+  $("#password").val(localStorage.getItem("password"));
 });
 
 $(function() {

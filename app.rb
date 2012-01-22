@@ -16,13 +16,7 @@ get "/" do
 end
 
 post "/reservation" do
-  Stalker.enqueue("timeedit", {
-    floor: params[:floor],
-    days: params[:days],
-    from: params[:from],
-    to: params[:to],
-    username: `echo $USERR`.strip,
-    password: `echo $PASSWORD`.strip,
+  Stalker.enqueue("timeedit", params.merge({
     uuid: request.cookies["uuid"]
   })
   
