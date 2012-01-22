@@ -40,6 +40,12 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "cd #{deploy_to}/current && touch tmp/restart.txt"
   end
+  
+  task :god, :roles => :app do
+    run "sudo /usr/bin/god load #{deploy_to}/current/config/stalker.god"
+    run "sudo /usr/bin/god restart timeedit"
+  end
       
   after "deploy:update", "deploy:cleanup"
+  after "deploy:cleanup", "deploy:god"
 end
