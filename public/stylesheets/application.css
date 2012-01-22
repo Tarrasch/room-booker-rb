@@ -11,6 +11,12 @@ a:visited {
   top: 10px;
 }
 
+#reservations-block {
+  clear: both;
+  position: relative;
+  top: 30px;
+}
+
 input {
    padding: 0.5em;
    line-height: 1.2em;
@@ -48,7 +54,7 @@ body {
   background-color: white; }
   #main #wrap {
     width: 460px;
-    height: 250px;
+    height: auto;
     margin: 0 auto;
     padding-top: 40px;
     padding-right: 30px;

@@ -1,10 +1,32 @@
+function pad(number, length) {
+  var str = '' + number;
+  while (str.length < length) {
+    str = '0' + str;
+  }
+  return str;
+}
+
+function addReservation(day, room){
+  var curr_date, curr_month, curr_year, $list;
+  $list = $("ul#reservations");
+  curr_date = day.getDate();
+  curr_month = day.getMonth() + 1;
+  curr_year = day.getFullYear();      
+  $list.append("<li>" + curr_year + "-" + pad(curr_month, 2) + "-" + curr_date + " - " + room + "</li>");
+}
+
 $(function () {
-  var days
   $("#calOne").jCal({
     day: new Date(),
     days: 4,
     showMonths: 2,
     monthSelect: true
+  });
+  
+      
+  var reservations = JSON.parse(localStorage.getItem("reservations") || "[]");
+  $(reservations).each(function(index, reservation) {
+    addReservation(new Date(reservation.day), reservation.room);
   });
 });
 
@@ -45,6 +67,7 @@ $(function () {
   });
   
   $("#clear").click(function() {
+    localStorage.setItem("reservations", "[]");
     window.location.reload();
   });
 });
@@ -80,6 +103,17 @@ $(function() {
       day = new Date(parseInt(message.day, 10) * 1000);
       data = $("[id*=d_" + (day.getMonth() + 1) + "_" + day.getDate() + "_" + day.getFullYear() + "]");
       if(message.notification == "valid"){
+        addReservation(day, message.room);
+        
+        var reservations = JSON.parse(localStorage.getItem("reservations") || "[]");
+        
+        reservations.push({
+          day: day.getTime(),
+          room: message.room
+        });
+        
+        localStorage.setItem("reservations", JSON.stringify(reservations));
+        
         data.css({"background-color": "green"});
       } else if(message.notification == "no_room"){
         data.css({"background-color": "yellow"});
