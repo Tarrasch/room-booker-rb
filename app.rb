@@ -18,7 +18,7 @@ end
 post "/reservation" do
   Stalker.enqueue("timeedit", params.merge({
     uuid: request.cookies["uuid"]
-  })
+  }))
   
   halt 204, "ok"
 end

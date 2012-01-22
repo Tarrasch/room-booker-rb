@@ -1,6 +1,6 @@
 $(function () {
   var days
-  $('#calOne').jCal({
+  $("#calOne").jCal({
     day: new Date(),
     days: 4,
     showMonths: 2,
@@ -8,12 +8,14 @@ $(function () {
   });
 });
 
-$(function () {
-  var button = $("#make-reservation");
-  var buttonData = button.text();
-  
+var button, buttonData;
+
+$(function () { 
+  button = $("#make-reservation");
+  buttonData = button.text();
+   
   $("#calOneDays").change(function () {
-    $('#calOne').data('days', $('#calOneDays').val());
+    $("#calOne").data("days", $("#calOneDays").val());
   });
   
   button.click(function() {
@@ -24,6 +26,10 @@ $(function () {
     });
     
     if(days.length === 0){
+      $.gritter.add({
+        title: "Error",
+        text: "No days selected"
+      });
       return;
     }
     
@@ -35,8 +41,6 @@ $(function () {
       floor: $("#floor").val(),
       username: localStorage.getItem("username"),
       password: localStorage.getItem("password")
-    }, function(data) {
-      button.text(buttonData);
     });
   });
   
@@ -59,17 +63,34 @@ $(function() {
   client = new Faye.Client("http://localhost:9999/faye");
   subscription = client.subscribe("/reserve/" + $.cookie("uuid"), function(message) {
     message = JSON.parse(message)
+    
+    if(message.type == "end"){
+      button.text(buttonData);
+    }
+    
     if(message.type == "message" && message.notification){
+      if(message.notification == "invalid_credentials"){
+        $.gritter.add({
+          title: "Error",
+          text: "Invalid user credentials"
+        });        
+        return;
+      }
+      
       day = new Date(parseInt(message.day, 10) * 1000);
-      data = $('[id*=d_' + (day.getMonth() + 1) + '_' + day.getDate() + '_' + day.getFullYear() + ']');
+      data = $("[id*=d_" + (day.getMonth() + 1) + "_" + day.getDate() + "_" + day.getFullYear() + "]");
       if(message.notification == "valid"){
         data.css({"background-color": "green"});
       } else if(message.notification == "no_room"){
         data.css({"background-color": "yellow"});
       } else {
+        $.gritter.add({
+          title: "Error",
+          text: message.notification
+        });
         data.css({"background-color": "red"});
       }
-      
+            
       data.removeClass("selectedDay");
     }
   });

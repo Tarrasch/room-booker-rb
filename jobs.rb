@@ -15,15 +15,15 @@ job "timeedit" do |args|
   rb = RoomBooker.new({
     from: args["from"],
     to: args["to"],
-    password: `echo $PASSWORD`.strip,
-    username: `echo $USERR`.strip
+    password: args["password"],
+    username: args["username"]
   })
   
   unless rb.valid_credentials?
     sf.message({
       type: "message",
-      message: "Invalid credentials"
-    }).send!; next
+      notification: "invalid_credentials"
+    }.to_json).send!; next
   end
   
   args["days"].each do |day|
