@@ -31,14 +31,15 @@ $(function () {
     $.post("/reservation", {
       days: days,
       from: $("#timespan-start").val(),
-      to: $("#timespan-end").val()
+      to: $("#timespan-end").val(),
+      floor: $("#floor").val()
     }, function(data) {
       button.text(buttonData);
     });
   });
   
   $("#clear").click(function() {
-    $(".selectedDay").removeClass("selectedDay");
+    window.location.reload();
   });
 });
 
@@ -52,6 +53,8 @@ $(function() {
       data = $('[id*=d_' + (day.getMonth() + 1) + '_' + day.getDate() + '_' + day.getFullYear() + ']');
       if(message.notification == "valid"){
         data.css({"background-color": "green"});
+      } else if(message.notification == "no_room"){
+        data.css({"background-color": "yellow"});
       } else {
         data.css({"background-color": "red"});
       }

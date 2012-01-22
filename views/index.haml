@@ -1,4 +1,4 @@
-%label{for: "calOneDays"} Day
+%label{for: "calOneDays"} Days
 %select#calOneDays
   - 10.times do |n|
     %option{value: n}=n
@@ -7,7 +7,7 @@
 %select#timespan-start
   - 25.times do |n|
     %option{value: n}=n
-
+    
 %label{for: "timespan-end"} End
 %select#timespan-end
   - 25.times do |n|
@@ -15,6 +15,12 @@
       %option{value: n, selected: true}=n
     - else
       %option{value: n}=n
-%button#make-reservation{type: "button"} Make reservation
+              
+%label{for: "floor"} Floor
+%select#floor
+  - (3..6).each do |n|
+    %option{value: n}=n
+
+%button#make-reservation{type: "button"} Reserve
 %button#clear{type: "button"} Clear
 #calOne

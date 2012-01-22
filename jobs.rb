@@ -28,7 +28,7 @@ job "timeedit" do |args|
   
   args["days"].each do |day|
     rb.date = Time.at(day.to_i)
-    if room = rb.rooms.sample
+    if room = rb.rooms.select{ |room| room.split("").first == args["floor"].to_s }.first
       begin
         rb.book!(room)
       rescue
@@ -37,7 +37,7 @@ job "timeedit" do |args|
         message ||= "valid"
       end
     else
-      message = "No rooms found"
+      message = "no_room"
     end
     
     hash = {

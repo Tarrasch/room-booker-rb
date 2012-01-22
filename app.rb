@@ -17,6 +17,7 @@ end
 
 post "/reservation" do
   Stalker.enqueue("timeedit", {
+    floor: params[:floor],
     days: params[:days],
     from: params[:from],
     to: params[:to],
