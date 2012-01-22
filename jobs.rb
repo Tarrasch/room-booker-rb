@@ -30,7 +30,7 @@ job "timeedit" do |args|
     rb.date = Time.at(day.to_i)
     if room = rb.rooms.select{ |room| room.split("").first == args["floor"].to_s }.first
       begin
-        # rb.book!(room)
+        rb.book!(room)
       rescue
         message = $!.message || "Something went wrong"
       ensure
