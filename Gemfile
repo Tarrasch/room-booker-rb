@@ -13,6 +13,7 @@ gem "jsonify"
 group :development do
   gem "shotgun"
   gem "foreman"
+  gem "capistrano"
 end
 
 group :test do
