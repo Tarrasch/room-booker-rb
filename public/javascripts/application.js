@@ -11,8 +11,8 @@ function addReservation(day, room){
   $list = $("ul#reservations");
   curr_date = day.getDate();
   curr_month = day.getMonth() + 1;
-  curr_year = day.getFullYear();      
-  $list.append("<li>" + curr_year + "-" + pad(curr_month, 2) + "-" + curr_date + " - " + room + "</li>");
+  curr_year = day.getFullYear();
+  $list.append("<li>" + curr_year + "-" + pad(curr_month, 2) + "-" + pad(curr_date, 2) + " - " + room + "</li>");
 }
 
 $(function () {
@@ -26,7 +26,11 @@ $(function () {
       
   var reservations = JSON.parse(localStorage.getItem("reservations") || "[]");
   $(reservations).each(function(index, reservation) {
-    addReservation(new Date(reservation.day), reservation.room);
+    var day, data;
+    day = new Date(reservation.day);
+    addReservation(day, reservation.room);
+    data = $("[id*=d_" + (day.getMonth() + 1) + "_" + day.getDate() + "_" + day.getFullYear() + "]");
+    data.css({"background-color": "green"});
   });
 });
 
