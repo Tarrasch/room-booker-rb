@@ -3,12 +3,11 @@ require "secure_faye"
 require "yaml"
 require "jsonify"
 require_relative "../lib/room_booker"
-
 include Stalker
 
 job "timeedit" do |args|
   sf = SecureFaye::Connect.new.
-    token(`echo $FAYE_TOKEN`.strip).
+    token("65E16044301D624A9F8741430755B5112AE4562F").
     server("http://0.0.0.0:9999/faye").
     channel("/reserve/" + args["uuid"])
   
