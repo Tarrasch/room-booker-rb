@@ -1,7 +1,10 @@
 %label{for: "calOneDays"} Days
 %select#calOneDays
-  - 10.times do |n|
-    %option{value: n}=n
+  - (1..9).each do |n|
+    - if n == 4
+      %option{value: n, selected: true}=n
+    - else
+      %option{value: n}=n
 
 %label{for: "timespan-start"} Start
 %select#timespan-start
