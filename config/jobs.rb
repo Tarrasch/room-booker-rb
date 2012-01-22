@@ -2,7 +2,7 @@ require "stalker"
 require "secure_faye"
 require "yaml"
 require "jsonify"
-require_relative "lib/room_booker"
+require_relative "../lib/room_booker"
 
 include Stalker
 

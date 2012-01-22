@@ -86,7 +86,7 @@ $(function() {
 
 $(function() {
   var client, subscription, day, data;
-  client = new Faye.Client("http://localhost:9999/faye");
+  client = new Faye.Client("http://" + document.domain + ":9999/faye");
   subscription = client.subscribe("/reserve/" + $.cookie("uuid"), function(message) {
     message = JSON.parse(message)
     
