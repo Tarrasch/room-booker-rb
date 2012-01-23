@@ -64,7 +64,7 @@ class RoomBooker
       url: url,
     }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{id}"
 
-    !! RestClient.post(url, post_data, cookies: authenticate)
+    !! RestClient.post(url, post_data, cookies: authenticate, timeout: 5)
   end
   
   #
@@ -89,7 +89,7 @@ class RoomBooker
       endtime=%s:0
     }.join % [date, hour_from, hour_to]
 
-    doc = Nokogiri::HTML(RestClient.get(rooms, cookies: authenticate))
+    doc = Nokogiri::HTML(RestClient.get(rooms, cookies: authenticate, timeout: 5))
     @rooms = doc.css(".infoboxtitle").map do |r| 
       # Room number "5210"
       number = r.text
@@ -146,7 +146,7 @@ private
       y: 0
     }
     
-    RestClient.post("https://web.timeedit.se/chalmers_se/db1/b1/", data) { |response, request, result, &block| 
+    RestClient.post("https://web.timeedit.se/chalmers_se/db1/b1/", data, timeout: 5) { |response, request, result, &block| 
       return @cookies = response.cookies
     }
   end
