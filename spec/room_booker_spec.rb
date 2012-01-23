@@ -86,5 +86,19 @@ describe RoomBooker do
         lambda { rb.book!("non-existing-room") }.should raise_error(RuntimeError, "invalid room")
       end
     end
+    
+    it "should be possible to pass an precise time" do
+      VCR.use_cassette("precise-time") do
+        rb = RoomBooker.new({
+          from: Time.parse("2012-02-01 12:23"),
+          to: Time.parse("2012-02-01 23:59"),
+          password: $password,
+          username: $username
+        })
+        
+        room = rb.rooms.sample
+        rb.book!(room).should be_true
+      end
+    end
   end
 end
