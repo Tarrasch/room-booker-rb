@@ -118,7 +118,7 @@ job "reserve.by" do |args|
       type: "message",
       notification: message,
       room: room,
-      day: day
+      day: day.to_i + args["from"].to_i * 60 * 60
     }
     
     sf.message(hash.to_json).send!
