@@ -9,7 +9,8 @@ gem "stalker", git: "git://github.com/oleander/stalker.git"
 gem "uuid"
 gem "acts_as_chain"
 gem "jsonify"
-
+gem "activesupport"
+  
 group :development do
   gem "shotgun"
   gem "foreman"
@@ -20,6 +21,5 @@ group :test do
   gem "rspec"
   gem "webmock"
   gem "vcr"
-  gem "activesupport"
   gem "timecop"
 end
