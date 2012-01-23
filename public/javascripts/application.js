@@ -6,13 +6,16 @@ function pad(number, length) {
   return str;
 }
 
-function addReservation(day, room){
-  var curr_date, curr_month, curr_year, $list;
-  $list = $("ul#reservations");
+function formatDate(day){
+  var curr_date, curr_month, curr_year;
   curr_date = day.getDate();
   curr_month = day.getMonth() + 1;
   curr_year = day.getFullYear();
-  $list.append("<li>" + curr_year + "-" + pad(curr_month, 2) + "-" + pad(curr_date, 2) + " - " + room + "</li>");
+  return curr_year + "-" + pad(curr_month, 2) + "-" + pad(curr_date, 2)
+}
+function addReservation(day, room){
+  var $list = $("ul#reservations");
+  $list.append("<li>" + formatDate(day) + " - " + room + "</li>");
 }
 
 $(function () {
@@ -140,12 +143,13 @@ $(function() {
       } else {
         $.gritter.add({
           title: "Error",
-          text: message.notification
+          text: "Type: " + message.notification + "</br>Date: " + formatDate(day) + "</br>Room: " + (message.room || "Unknown")
         });
+        
         data.css({"background-color": "red"});
         $(".red").trigger("mouseenter");
       }
-            
+      
       data.removeClass("selectedDay");
     }
   });
