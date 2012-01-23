@@ -1,12 +1,4 @@
 GIT
-  remote: /Users/linus/Documents/Projekt/stalker/.git
-  revision: b961f0be10e144738b4d2f5d89d70aac6f51e1db
-  specs:
-    stalker (0.9.0)
-      beanstalk-client
-      json_pure
-
-GIT
   remote: git://github.com/oleander/secure_faye.git
   revision: 35641d6c7f267c2fa719e76f651141f70925354b
   specs:
@@ -15,6 +7,14 @@ GIT
       faye
       jsonify
       rest-client
+
+GIT
+  remote: git://github.com/oleander/stalker.git
+  revision: b961f0be10e144738b4d2f5d89d70aac6f51e1db
+  specs:
+    stalker (0.9.0)
+      beanstalk-client
+      json_pure
 
 GEM
   remote: http://rubygems.org/
