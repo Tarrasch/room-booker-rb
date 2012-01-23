@@ -9,8 +9,40 @@ a:visited {
 #footer {
   position: relative;
   top: 10px;
+  height: 20px;
 }
 
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+#footer .left {
+  position: relative;
+  float: left;
+}
+
+#footer .right {
+  position: relative;
+  float: right;
+}
+
+.circle {
+  border: 1px solid;
+  position: relative;
+  padding: 2px;
+  margin: 2px;
+  width: 11px; height: 11px; 
+  display: inline;
+  float: right;
+}
 #reservations-block {
   clear: both;
   position: relative;

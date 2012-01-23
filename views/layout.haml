@@ -20,6 +20,11 @@
       #wrap
         = yield
       #footer
-        %a{href: "https://github.com/oleander"} Contact 
-        |  
-        %a{href: "https://github.com/Tarrasch/room-booker-rb"} Fork me
+        .left
+          %a{href: "https://github.com/oleander"} Contact 
+          |  
+          %a{href: "https://github.com/Tarrasch/room-booker-rb"} Fork me
+        .right
+          .red.circle{title: "Something when wrong during the booking process"}
+          .yellow.circle{title: "There are no rooms available on the given floor"}
+          .green.circle{title: "Everything when okay"}
