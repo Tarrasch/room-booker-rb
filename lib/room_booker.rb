@@ -17,7 +17,7 @@ class RoomBooker
   #
   def initialize(args)
     args.keys.each { |name| instance_variable_set "@" + name.to_s, args[name] }
-    raise "#from can't be smaller than #to" if hour_from - hour_to > 0
+    raise "#from can't be smaller than #to"  if hour_from.to_i - hour_to.to_i > 0
   end
   
   #
@@ -72,7 +72,7 @@ class RoomBooker
   #
   def rooms
     return room_numbers if @rooms
-    rooms = %w{
+    url = %w{
       https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/objects.html?
       max=15&
       fr=t&
@@ -85,11 +85,11 @@ class RoomBooker
       objects=160177.184,203433.185&
       types=186&
       dates=%s&
-      starttime=%s:0&
-      endtime=%s:0
-    }.join % [date, hour_from, hour_to]
+      starttime=%s&
+      endtime=%s
+    }.join % [date, hour_from, hour_to].map { |x| CGI.escape(x) }
 
-    doc = Nokogiri::HTML(RestClient.get(rooms, cookies: authenticate, timeout: 5))
+    doc = Nokogiri::HTML(RestClient.get(url, cookies: authenticate, timeout: 5))
     @rooms = doc.css(".infoboxtitle").map do |r| 
       # Room number "5210"
       number = r.text
@@ -123,16 +123,24 @@ private
     if defined?(@date) and @date.is_a?(Time)
       @date.strftime("%Y%m%d")
     else
-      @from
+      @from.strftime("%Y%m%d")
     end
   end
   
   def hour_from
-    @from.is_a?(Time) ? @from.hour : @from.to_i
+    if @from.is_a?(Time) 
+      "#{@from.hour}:#{@from.min}"
+    else
+      @from =~ /:/ ? @from : "#{@from}:00"
+    end
   end
   
   def hour_to
-    @to.is_a?(Time) ? @to.hour : @to.to_i
+    if @to.is_a?(Time) 
+      "#{@to.hour}:#{@to.min}"
+    else
+      @to =~ /:/ ? @to : "#{@to}:00"
+    end
   end
   
   def authenticate

@@ -4,8 +4,8 @@ describe RoomBooker do
       RoomBooker.new({
         username: $username,
         password: $password,
-        from: 1.day.from_now,
-        to: 1.day.from_now + 3.hours
+        from: Time.parse("20120423 02:00"),
+        to: Time.parse("20120423 03:00")
       })
     }
 

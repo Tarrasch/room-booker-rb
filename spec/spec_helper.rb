@@ -1,12 +1,15 @@
 require "rspec"
 require "webmock/rspec"
 require "vcr"
+require "timecop"
 require "activesupport"
 require_relative "../lib/room_booker"
 
 $username = `echo $USERR`.strip
 $password = `echo $PASSWORD`.strip
 
+Timecop.freeze(Time.parse("2012-01-25"))
+  
 RSpec.configure do |config|
   config.mock_with :rspec
   config.extend VCR::RSpec::Macros
