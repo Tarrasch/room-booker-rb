@@ -5,6 +5,8 @@ require "jsonify"
 require_relative "../lib/room_booker"
 include Stalker
 
+Stalker.censor_params(:password, :username)
+
 job "timeedit" do |args|
   sf = SecureFaye::Connect.new.
     token("65E16044301D624A9F8741430755B5112AE4562F").
