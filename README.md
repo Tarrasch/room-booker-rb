@@ -1,7 +1,21 @@
 # Room Booker
 
 Chalmers room booking application.
-An alternative to [Timeedit](web.timeedit.se/chalmers_se), which sucks. 
+An alternative to [Timeedit](http://web.timeedit.se/chalmers_se), which sucks. 
+
+A live demo can be found @ [timeedit.oleander.nu](http://timeedit.oleander.nu).  
+Your browser must support HTML5's [local storage](http://dev.w3.org/html5/webstorage/), you can test your browser [here](http://html5test.com/).
+
+## Web application
+
+### Setup
+
+1. Install [beanstalkd](http://kr.github.com/beanstalkd/). `brew install beanstalkd` can be used in OS X
+2. Clone project `git clone git://github.com/Tarrasch/room-booker-rb.git`
+3. Navigate to `room-booker` and install dependencies using `bundle install`
+4. Install [foreman](http://railscasts.com/episodes/281-foreman) globaly using `[sudo] gem install foreman`
+5. Start [Faye](http://faye.jcoglan.com/), beanstalkd, [Sinatra](http://www.sinatrarb.com/) and [Stalker](https://github.com/han/stalker) using `foreman start`
+6. Navigate to [localhost:4000](http://localhost:4000) and you're done!
 
 ## RoomBooker class
 
