@@ -49,7 +49,13 @@ job "timeedit" do |args|
   args["days"].each do |day|
     rb.date = Time.at(day.to_i)
     
-    if room = rb.rooms.select{ |room| room.split("").first == args["floor"].to_s }.first
+    if args["floor"] == "0"
+      room = rb.rooms.reject{ |room| room.to_i.zero? }.sample
+    else
+      room = rb.rooms.select{ |room| room.split("").first == args["floor"] }.first
+    end
+    
+    if room 
       begin
         rb.book!(room)
       rescue

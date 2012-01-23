@@ -1,4 +1,4 @@
-%label{for: "calOneDays"} Days
+%label{for: "calOneDays"} A
 %select#calOneDays
   - (1..9).each do |n|
     - if n == 4
@@ -27,6 +27,7 @@
               
 %label{for: "floor"} Floor
 %select#floor
+  %option{value: 0} Any
   - (3..6).each do |n|
     %option{value: n}=n
 
