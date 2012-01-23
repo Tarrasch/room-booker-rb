@@ -11,8 +11,11 @@ function formatDate(day){
   curr_date = day.getDate();
   curr_month = day.getMonth() + 1;
   curr_year = day.getFullYear();
-  return curr_year + "-" + pad(curr_month, 2) + "-" + pad(curr_date, 2)
+  curr_hour = day.getHours();
+  curr_min = day.getMinutes();
+  return curr_year + "-" + pad(curr_month, 2) + "-" + pad(curr_date, 2) + " " + pad(curr_hour, 2) + ":" + pad(curr_min, 2);
 }
+
 function addReservation(day, room){
   var $list = $("ul#reservations");
   $list.append("<li>" + formatDate(day) + " - " + room + "</li>");
@@ -108,7 +111,6 @@ $(function() {
   client = new Faye.Client("http://" + document.domain + ":9999/faye");
   subscription = client.subscribe("/reserve/" + $.cookie("uuid"), function(message) {
     message = JSON.parse(message);
-        
     if(message.type == "end"){
       button.text(buttonData);
     }
@@ -152,5 +154,23 @@ $(function() {
       
       data.removeClass("selectedDay");
     }
+  });
+});
+
+$(function() {
+  $("#now").click(function() {
+    var $self = $(this), name;
+    name = $self.text();
+    $self.text("Hold on!");
+    $.post("/now", {
+      username: localStorage.getItem("username"),
+      password: localStorage.getItem("password")
+    });
+    
+    setTimeout(function() {
+      $self.text(name);
+    }, 4000);
+    
+    return false;
   });
 });

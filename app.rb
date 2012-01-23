@@ -20,7 +20,15 @@ get "/" do
 end
 
 post "/reservation" do
-  Stalker.enqueue("timeedit", params.merge({
+  Stalker.enqueue("reserve.by", params.merge({
+    uuid: request.cookies["uuid"]
+  }))
+  
+  halt 204, "ok"
+end
+
+post "/now" do
+  Stalker.enqueue("reserve.now", params.merge({
     uuid: request.cookies["uuid"]
   }))
   

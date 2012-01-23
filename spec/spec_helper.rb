@@ -2,7 +2,6 @@ require "rspec"
 require "webmock/rspec"
 require "vcr"
 require "timecop"
-require "activesupport"
 require_relative "../lib/room_booker"
 
 $username = `echo $USERR`.strip

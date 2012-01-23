@@ -1,6 +1,7 @@
 require "stalker"
 require "secure_faye"
 require "yaml"
+require "time"
 require "jsonify"
 require_relative "../lib/room_booker"
 include Stalker
@@ -19,7 +20,53 @@ error do |e, job, args|
   }.to_json).send!
 end
 
-job "timeedit" do |args|
+job "reserve.now" do |args|
+  sf = SecureFaye::Connect.new.
+    token("65E16044301D624A9F8741430755B5112AE4562F").
+    server("http://0.0.0.0:9999/faye").
+    channel("/reserve/" + args["uuid"])
+    
+  begin
+    time = Time.now
+    end_of_day = Time.parse("#{time.year}-#{"%02d" % time.month}-#{"%02d" % time.day} 23:59")
+    rb = RoomBooker.new({
+      from: time,
+      to: end_of_day,
+      password: args["password"],
+      username: args["username"]
+    })
+  rescue RuntimeError
+    sf.message({
+      notification: $!.message,
+      type: "message"
+    }.to_json).send!; next
+  end
+  
+  room = rb.rooms.reject{ |room| room.to_i.zero? }.sample
+  
+  if room 
+    begin
+      rb.book!(room)
+    rescue
+      message ||= $!.message || "Something went wrong"
+    ensure
+      message ||= "valid"
+    end
+  else
+    message ||= "no_room"
+  end
+  
+  hash = {
+    type: "message",
+    notification: message,
+    room: room,
+    day: time.to_i
+  }
+  
+  sf.message(hash.to_json).send!
+end
+
+job "reserve.by" do |args|
   sf = SecureFaye::Connect.new.
     token("65E16044301D624A9F8741430755B5112AE4562F").
     server("http://0.0.0.0:9999/faye").

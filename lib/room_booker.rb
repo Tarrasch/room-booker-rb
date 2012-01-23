@@ -46,8 +46,8 @@ class RoomBooker
       nocache=3
     }.join % [
       date,
-      "#{hour_from}:0", 
-      "#{hour_to}:0", 
+      hour_from, 
+      hour_to, 
       "160177.184,pr101", 
       "203433.185,ks91084", 
       "#{id},#{room}"
@@ -55,12 +55,12 @@ class RoomBooker
     
     post_data = {
       dates: date,
-      endTime: "#{hour_to}:00",
+      endTime: hour_to,
       fe2: nil,
       fe8: nil,
       id: -1,
       kind: "reserve",
-      startTime: "#{hour_from}:00",
+      startTime: hour_from,
       url: url,
     }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{id}"
 
