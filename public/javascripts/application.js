@@ -89,11 +89,23 @@ $(function() {
 });
 
 $(function() {
+  $([".red", ".green", ".yellow"]).each(function(index, klass) {
+    $(klass).addGlow();
+    $(klass).click(function(e) {
+      $.gritter.add({
+        title: "Color explanation",
+        text: $(e.target).attr("title")
+      });
+    })
+  });
+})
+
+$(function() {
   var client, subscription, day, data;
   client = new Faye.Client("http://" + document.domain + ":9999/faye");
   subscription = client.subscribe("/reserve/" + $.cookie("uuid"), function(message) {
-    message = JSON.parse(message)
-    
+    message = JSON.parse(message);
+        
     if(message.type == "end"){
       button.text(buttonData);
     }
@@ -120,9 +132,10 @@ $(function() {
         });
         
         localStorage.setItem("reservations", JSON.stringify(reservations));
-        
+        $(".green").trigger("mouseenter");
         data.css({"background-color": "green"});
       } else if(message.notification == "no_room"){
+        $(".yellow").trigger("mouseenter");
         data.css({"background-color": "yellow"});
       } else {
         $.gritter.add({
@@ -130,9 +143,10 @@ $(function() {
           text: message.notification
         });
         data.css({"background-color": "red"});
+        $(".red").trigger("mouseenter");
       }
             
       data.removeClass("selectedDay");
     }
   });
-})
+});
