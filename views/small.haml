@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    %meta{"http-equiv" => "Content-Type", content: "text/html; charset=UTF-8"}
+    
+    %script{src: "/javascripts/jquery.js"}
+    %script{src: "/javascripts/jcal.js"}
+    %script{src: "/javascripts/faye-browser-min.js"}
+    %script{src: "/javascripts/cookie.js"}
+    %script{src: "/javascripts/mobile.application.js"}
+    %script{src: "/javascripts/jquery.color.js"}
+    %script{src: "/javascripts/jquery-glowing.js"}
+    %link{href: "/stylesheets/mobile.application.css", rel: "stylesheet", media: "screen"}
+    
+    %title TimeEdit V2.0.0
+  %body
+    #main
+      #wrap
+        = yield

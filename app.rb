@@ -15,6 +15,10 @@ before do
   end
 end
 
+get "/", agent: /mobile/i do
+  haml :mobile, layout: :small
+end
+
 get "/" do
   haml :index
 end
