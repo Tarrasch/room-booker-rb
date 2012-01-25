@@ -15,8 +15,17 @@ before do
   end
 end
 
-get "/", agent: /mobile/i do
+# agent: /mobile/i
+get "/" do
   haml :mobile, layout: :small
+end
+
+post "/validate" do
+  Stalker.enqueue("validate", params.merge({
+    uuid: request.cookies["uuid"]
+  }))
+  
+  halt 204, "ok"
 end
 
 get "/" do

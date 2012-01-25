@@ -20,6 +20,25 @@ error do |e, job, args|
   }.to_json).send!
 end
 
+job "validate" do |args|
+  sf = SecureFaye::Connect.new.
+    token("65E16044301D624A9F8741430755B5112AE4562F").
+    server("http://0.0.0.0:9999/faye").
+    channel("/reserve/" + args["uuid"])
+    
+  rb = RoomBooker.new({
+    from: Time.now,
+    to: Time.now + 3600,
+    password: args["password"],
+    username: args["username"]
+  })
+    
+  sf.message({
+    valid: rb.valid_credentials?,
+    job: "validate"
+  }.to_json).send!
+end
+
 job "reserve.now" do |args|
   sf = SecureFaye::Connect.new.
     token("65E16044301D624A9F8741430755B5112AE4562F").
@@ -46,7 +65,7 @@ job "reserve.now" do |args|
   
   if room 
     begin
-      rb.book!(room)
+      # rb.book!(room)
     rescue
       message ||= $!.message || "Something went wrong"
     ensure
@@ -104,7 +123,7 @@ job "reserve.by" do |args|
     
     if room 
       begin
-        rb.book!(room)
+        # rb.book!(room)
       rescue
         message ||= $!.message || "Something went wrong"
       ensure

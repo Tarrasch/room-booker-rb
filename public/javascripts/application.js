@@ -86,15 +86,6 @@ $(function () {
 });
 
 $(function() {
-  $("#username, #password").keyup(function() {
-    localStorage.setItem($(this).attr("id"), $(this).val());
-  });
-  
-  $("#username").val(localStorage.getItem("username"));
-  $("#password").val(localStorage.getItem("password"));
-});
-
-$(function() {
   $([".red", ".green", ".yellow"]).each(function(index, klass) {
     $(klass).addGlow();
     $(klass).click(function(e) {
@@ -154,23 +145,5 @@ $(function() {
       
       data.removeClass("selectedDay");
     }
-  });
-});
-
-$(function() {
-  $("#now").click(function() {
-    var $self = $(this), name;
-    name = $self.text();
-    $self.text("Hold on!");
-    $.post("/now", {
-      username: localStorage.getItem("username"),
-      password: localStorage.getItem("password")
-    });
-    
-    setTimeout(function() {
-      $self.text(name);
-    }, 4000);
-    
-    return false;
   });
 });
