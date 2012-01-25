@@ -65,7 +65,7 @@ job "reserve.now" do |args|
   
   if room 
     begin
-      # rb.book!(room)
+      rb.book!(room) unless ENV["STALKER_ENV"] == "development"
     rescue
       message ||= $!.message || "Something went wrong"
     ensure
