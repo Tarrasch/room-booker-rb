@@ -15,9 +15,12 @@ before do
   end
 end
 
-# agent: /mobile/i
-get "/" do
+get "/", agent: /mobile/i do
   haml :mobile, layout: :small
+end
+
+get "/" do
+  haml :index
 end
 
 post "/validate" do
@@ -26,10 +29,6 @@ post "/validate" do
   }))
   
   halt 204, "ok"
-end
-
-get "/" do
-  haml :index
 end
 
 post "/reservation" do
