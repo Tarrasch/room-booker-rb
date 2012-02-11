@@ -1,4 +1,4 @@
-shotgun: shotgun -p 4000 config.ru
+shotgun: bundle exec shotgun -p 4000 config.ru
 beanstalkd: beanstalkd
 stalk: bundle exec stalk config/jobs.rb
-faye: rackup config/faye.ru -s thin -E production -p 9999
+faye: bundle exec rackup config/faye.ru -s thin -E production -p 9999
