@@ -22,6 +22,16 @@ function addReservation(day, room){
 }
 
 $(function () {
+  
+  $("#username, #password").keydown(function() {
+    var id = $(this).attr("id");
+    localStorage.setItem(id, $(this).val());
+  });
+  
+  $(["username", "password"]).each(function(i, value) {
+    $("#" + value).val(localStorage.getItem(value));
+  });
+  
   $("#calOne").jCal({
     day: new Date(),
     days: 4,
@@ -74,6 +84,12 @@ $(function () {
       username: localStorage.getItem("username"),
       password: localStorage.getItem("password")
     });
+  });
+  
+  
+  $("#username, #password").keydown(function() {
+    var id = $(this).attr("id");
+    localStorage.setItem(id, $(this).val());
   });
   
   $("#clear").click(function() {
@@ -134,6 +150,8 @@ $(function() {
         $(".yellow").trigger("mouseenter");
         data.css({"background-color": "yellow"});
       } else {
+        
+        console.debug("message", message);
         $.gritter.add({
           title: "Error",
           text: "Type: " + message.notification + "</br>Date: " + formatDate(day) + "</br>Room: " + (message.room || "Unknown")
