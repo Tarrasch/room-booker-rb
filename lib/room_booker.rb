@@ -4,6 +4,12 @@ require "cgi"
 require "acts_as_chain"
 
 class RoomBooker
+  def to_s
+    (self.instance_variables - [:@password]).map { |member|
+      "#{member}: #{instance_variable_get member}"
+    }.join "\n"
+  end
+
   acts_as_chain :date
   
   #
