@@ -41,7 +41,7 @@ describe RoomBooker do
   end
   
   describe "other" do
-    it "does not except negative times" do
+    it "does not accept negative times" do
       lambda {
         RoomBooker.new({
           from: "19",
