@@ -20,6 +20,7 @@ class RoomBooker
   def initialize(args)
     args.keys.each { |name| instance_variable_set "@" + name.to_s, args[name] }
     raise "#from can't be smaller than #to"  if hour_from.to_i - hour_to.to_i > 0
+    @_raw_rooms, @_rooms = {}, {}
   end
   
   #
@@ -72,7 +73,7 @@ class RoomBooker
   # @return Array<String> A list of rooms ["1234"]
   #
   def rooms
-    @_rooms ||= raw_rooms.map{ |room| room[:number] }
+    @_rooms[date] ||= raw_rooms.map{ |room| room[:number] }
   end
   
   #
@@ -91,7 +92,7 @@ class RoomBooker
 private
 
   def raw_rooms
-    @_raw_rooms ||= fetch_rooms!
+    @_raw_rooms[date] ||= fetch_rooms!
   end
   
   def fetch_rooms!
@@ -112,13 +113,16 @@ private
     }.join % [date, hour_from, hour_to].map { |x| CGI.escape(x) }
     
     doc = Nokogiri::HTML(RestClient.get(url, cookies: authenticate, timeout: 5))
-    doc.css(".infoboxtitle").map do |r| 
+    raw = doc.css(".infoboxtitle").map do |r| 
       # Room number "5210"
       number = r.text
       # Room object id 1224631.186
       id = doc.at_css("[data-name='#{number}']").attr("data-id")
       {id: id, number: number}
-    end    
+    end 
+    
+    
+    return raw
   end
   
   def date
