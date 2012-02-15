@@ -29,6 +29,16 @@ class RoomBooker
     @_raw_rooms, @_rooms = {}, {}
   end
   
+  # Like book! but doesn't throw
+  #
+  # @room String The room that should be booked
+  # @return Bool Did everything went okay? Will also return true on RestClient::Exception
+  #
+  def book_safe!(room)
+    book! room
+  rescue RestClient::Exception
+    false
+  end
   #
   # @room String The room that should be booked
   # @return Bool Did everything went okay?
