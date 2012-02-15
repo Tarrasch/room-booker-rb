@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+
 require "rest-client"
 require "nokogiri"
 require "cgi"
@@ -24,6 +26,7 @@ class RoomBooker
   def initialize(args)
     args.keys.each { |name| instance_variable_set "@" + name.to_s, args[name] }
     raise "#from can't be smaller than #to"  if hour_from.to_i - hour_to.to_i > 0
+    @_raw_rooms, @_rooms = {}, {}
   end
   
   #
@@ -31,13 +34,14 @@ class RoomBooker
   # @return Bool Did everything went okay?
   #
   def book!(room)
-    found_id = @rooms.select{ |r| r[:number] == room }.first
+    found_id = raw_rooms.select{ |r| r[:number] == room }.first
     raise "invalid room" unless found_id
     id = found_id[:id]
-    
+        
     url = %w{
-      https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/r.html?
+      https://web.timeedit.se/chalmers_se/db1/b1/r.html?
       sid=1002&
+      id=-1&
       h=t&
       id=-1&
       step=2&
@@ -48,14 +52,12 @@ class RoomBooker
       endTime=%s&
       o=%s&
       o=%s&
-      o=%s&
       nocache=3
     }.join % [
       date,
       hour_from, 
       hour_to, 
-      "160177.184,pr101", 
-      "203433.185,ks91084", 
+      "203460.192,Övrigt", 
       "#{id},#{room}"
     ].map { |x| CGI.escape(x) }
     
@@ -68,7 +70,7 @@ class RoomBooker
       kind: "reserve",
       startTime: hour_from,
       url: url,
-    }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{id}"
+    }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=203460.192&o=#{id}"
 
     !! RestClient.post(url, post_data, cookies: authenticate, timeout: 5)
   end
@@ -77,34 +79,7 @@ class RoomBooker
   # @return Array<String> A list of rooms ["1234"]
   #
   def rooms
-    return room_numbers if @rooms
-    url = %w{
-      https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/objects.html?
-      max=15&
-      fr=t&
-      partajax=t&
-      im=f&
-      add=f&
-      sid=1002&
-      step=1&
-      grp=5&
-      objects=160177.184,203433.185&
-      types=186&
-      dates=%s&
-      starttime=%s&
-      endtime=%s
-    }.join % [date, hour_from, hour_to].map { |x| CGI.escape(x) }
-
-    doc = Nokogiri::HTML(RestClient.get(url, cookies: authenticate, timeout: 5))
-    @rooms = doc.css(".infoboxtitle").map do |r| 
-      # Room number "5210"
-      number = r.text
-      # Room object id 1224631.186
-      id = doc.at_css("[data-name='#{number}']").attr("data-id")
-      {id: id, number: number}
-    end
-    
-    return room_numbers
+    @_rooms[date] ||= raw_rooms.map{ |room| room[:number] }
   end
   
   #
@@ -121,8 +96,39 @@ class RoomBooker
     @date = date
   end
 private
-  def room_numbers
-    @rooms.map{|room| room[:number]}
+
+  def raw_rooms
+    @_raw_rooms[date] ||= fetch_rooms!
+  end
+  
+  def fetch_rooms!
+    url = %w{
+      https://web.timeedit.se/chalmers_se/db1/b1/objects.html?
+      max=15&
+      fr=t&
+      partajax=t&
+      im=f&
+      add=f&
+      sid=1002&
+      step=1&
+      grp=5&
+      types=186&
+      dates=%s&
+      starttime=%s&
+      endtime=%s
+    }.join % [date, hour_from, hour_to].map { |x| CGI.escape(x) }
+    
+    doc = Nokogiri::HTML(RestClient.get(url, cookies: authenticate, timeout: 5))
+    raw = doc.css(".infoboxtitle").map do |r| 
+      # Room number "5210"
+      number = r.text
+      # Room object id 1224631.186
+      id = doc.at_css("[data-name='#{number}']").attr("data-id")
+      {id: id, number: number}
+    end 
+    
+    
+    return raw
   end
   
   def date
