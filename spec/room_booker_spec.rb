@@ -4,8 +4,8 @@ describe RoomBooker do
       RoomBooker.new({
         username: $username,
         password: $password,
-        from: Time.parse("20120423 02:00"),
-        to: Time.parse("20120423 03:00")
+        from: Time.parse("2012-02-23 02:00"),
+        to: Time.parse("2012-02-23 03:00")
       })
     }
 
@@ -18,7 +18,9 @@ describe RoomBooker do
     describe "#book!" do
       let(:room) { subject.rooms.first }
       use_vcr_cassette "book"
-      it { subject.book!(room).should be_true }
+      it "books" do
+        subject.book!(room).should be_true
+      end
     end
   end
   
@@ -75,8 +77,8 @@ describe RoomBooker do
     it "should be valid" do
       VCR.use_cassette("invalid2") do
         rb = RoomBooker.new({
-          from: "14",
-          to: "15",
+          from: "1",
+          to: "2",
           date: Time.now,
           password: $password,
           username: $username
@@ -90,8 +92,8 @@ describe RoomBooker do
     it "should be possible to pass an precise time" do
       VCR.use_cassette("precise-time") do
         rb = RoomBooker.new({
-          from: Time.parse("2012-02-01 12:23"),
-          to: Time.parse("2012-02-01 23:59"),
+          from: Time.parse("2012-02-30 12:23"),
+          to: Time.parse("2012-02-30 23:59"),
           password: $password,
           username: $username
         })
