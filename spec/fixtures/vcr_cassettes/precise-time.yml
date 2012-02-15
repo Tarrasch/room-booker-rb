@@ -1301,7 +1301,7 @@
             fler\">Visa fler</a>\n\n<span id=\"pagesData_o\" data-pagesjson='{\"currentPage\":1,\"pages\":3,\"start\":0,\"max\":15,\"total\":39}'
             class=\"hidden\"></span>\n</div>\n"
           net_http_res: !!null 
-          args: &70102268425820
+          args: &70358371379180
             :method: :get
             :url: https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/objects.html?max=15&fr=t&partajax=t&im=f&add=f&sid=1002&step=1&grp=5&objects=160177.184,203433.185&types=186&dates=20120201&starttime=12%3A23&endtime=23%3A59
             :headers:
@@ -1310,7 +1310,7 @@
           code: 200
         read: true
         __read_body_previously_called: true
-      args: *70102268425820
+      args: *70358371379180
       code: 200
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
@@ -2007,165 +2007,379 @@
       - max-age=10, post-check=1, pre-check=2
       x-timeedit-search:
       - 232ms
-    body: ! "\n\n  \n  <div id=\"objectbasketitemX0\" data-id=\"192372.186\" data-name=\"3207\"
-      \ class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192372.186',
-      '3207', this)\">\n  <table id=\"table0\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info0\">\n    <div class=\"infoboxtitle\">3207</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3207</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX1\" data-id=\"192373.186\"
-      data-name=\"3209\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192373.186',
-      '3209', this)\">\n  <table id=\"table1\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info1\">\n    <div class=\"infoboxtitle\">3209</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3209</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX2\" data-id=\"192374.186\"
-      data-name=\"3211\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192374.186',
-      '3211', this)\">\n  <table id=\"table2\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info2\">\n    <div class=\"infoboxtitle\">3211</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3211</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX3\" data-id=\"192375.186\"
-      data-name=\"3213\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192375.186',
-      '3213', this)\">\n  <table id=\"table3\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info3\">\n    <div class=\"infoboxtitle\">3213</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3213</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX4\" data-id=\"192381.186\"
-      data-name=\"4205\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192381.186',
-      '4205', this)\">\n  <table id=\"table4\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info4\">\n    <div class=\"infoboxtitle\">4205</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum4205</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX5\" data-id=\"192382.186\"
-      data-name=\"4207\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192382.186',
-      '4207', this)\">\n  <table id=\"table5\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info5\">\n    <div class=\"infoboxtitle\">4207</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum4207</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX6\" data-id=\"192387.186\"
-      data-name=\"5213\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192387.186',
-      '5213', this)\">\n  <table id=\"table6\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info6\">\n    <div class=\"infoboxtitle\">5213</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum5213</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX7\" data-id=\"192388.186\"
-      data-name=\"5215\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192388.186',
-      '5215', this)\">\n  <table id=\"table7\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info7\">\n    <div class=\"infoboxtitle\">5215</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum5215</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX8\" data-id=\"192389.186\"
-      data-name=\"5217\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192389.186',
-      '5217', this)\">\n  <table id=\"table8\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info8\">\n    <div class=\"infoboxtitle\">5217</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum5217</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX9\" data-id=\"192393.186\"
-      data-name=\"6205\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192393.186',
-      '6205', this)\">\n  <table id=\"table9\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info9\">\n    <div class=\"infoboxtitle\">6205</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6205</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX10\" data-id=\"192394.186\"
-      data-name=\"6207\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192394.186',
-      '6207', this)\">\n  <table id=\"table10\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info10\">\n    <div class=\"infoboxtitle\">6207</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6207</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX11\" data-id=\"192395.186\"
-      data-name=\"6209\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192395.186',
-      '6209', this)\">\n  <table id=\"table11\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info11\">\n    <div class=\"infoboxtitle\">6209</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6209</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX12\" data-id=\"192398.186\"
-      data-name=\"6215\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192398.186',
-      '6215', this)\">\n  <table id=\"table12\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info12\">\n    <div class=\"infoboxtitle\">6215</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6215</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX13\" data-id=\"192540.186\"
-      data-name=\"Abadi\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192540.186',
-      'Abadi', this)\">\n  <table id=\"table13\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info13\">\n    <div class=\"infoboxtitle\">Abadi</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>SV451 Abadi - hus Svea</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>Lindholmen</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
-      \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
-      round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
-      \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX14\" data-id=\"192646.186\"
-      data-name=\"Basic\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192646.186',
-      'Basic', this)\">\n  <table id=\"table14\" cellspacing=\"0\" class=\"infotable
-      infotablenormal\">\n    \n \t<td>\n \t<div id=\"info14\">\n    <div class=\"infoboxtitle\">Basic</div>
-      \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
-      \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>218 Basic - hus Patricia</td>\n\t
-      \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>Patricia
-      Lindholmen</td>\n\t  </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n
-      \   \t<td>Grupprum</td>\n\t  </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n
-      \ </tr></table>\n  <div class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
-      class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n  \n
-      \ <div id=\"nextPage_o15\" style=\"display: none\"></div>\n    <span id=\"linksdata_o\"
-      data-linksbase=\"https://web.timeedit.se/chalmers_se/db1/b1/objects?max=15&amp;fr=t&amp;partajax=t&amp;im=f&amp;add=f&amp;sid=1002&amp;step=1&amp;grp=5&amp;types=186&amp;dates=20120301&amp;starttime=12%3A23&amp;endtime=23%3A59\"
-      class=\"hidden\"></span>\n      <p></p>\n      <div id=\"errorPage_o\" style=\"display:
-      none\"></div>\n      <div id=\"bottom_o\"></div>\n<div class=\"pageLinksWrap\">\n<a
-      id=\"nextPageButton_o\" href=\"javascript:PageLoaderNext_o();\" class=\"ui-corner-all
-      ui-state-default clickable loadNextPage\" data-text=\"Visa fler\">Visa fler</a>\n\n<span
-      id=\"pagesData_o\" data-pagesjson='{\"currentPage\":1,\"pages\":3,\"start\":0,\"max\":15,\"total\":33}'
-      class=\"hidden\"></span>\n</div>\n"
+    body: !str
+      str: ! "\n\n  \n  <div id=\"objectbasketitemX0\" data-id=\"192372.186\" data-name=\"3207\"
+        \ class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192372.186',
+        '3207', this)\">\n  <table id=\"table0\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info0\">\n    <div class=\"infoboxtitle\">3207</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3207</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX1\" data-id=\"192373.186\"
+        data-name=\"3209\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192373.186',
+        '3209', this)\">\n  <table id=\"table1\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info1\">\n    <div class=\"infoboxtitle\">3209</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3209</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX2\" data-id=\"192374.186\"
+        data-name=\"3211\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192374.186',
+        '3211', this)\">\n  <table id=\"table2\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info2\">\n    <div class=\"infoboxtitle\">3211</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3211</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX3\" data-id=\"192375.186\"
+        data-name=\"3213\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192375.186',
+        '3213', this)\">\n  <table id=\"table3\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info3\">\n    <div class=\"infoboxtitle\">3213</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3213</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX4\" data-id=\"192381.186\"
+        data-name=\"4205\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192381.186',
+        '4205', this)\">\n  <table id=\"table4\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info4\">\n    <div class=\"infoboxtitle\">4205</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum4205</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX5\" data-id=\"192382.186\"
+        data-name=\"4207\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192382.186',
+        '4207', this)\">\n  <table id=\"table5\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info5\">\n    <div class=\"infoboxtitle\">4207</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum4207</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX6\" data-id=\"192387.186\"
+        data-name=\"5213\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192387.186',
+        '5213', this)\">\n  <table id=\"table6\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info6\">\n    <div class=\"infoboxtitle\">5213</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum5213</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX7\" data-id=\"192388.186\"
+        data-name=\"5215\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192388.186',
+        '5215', this)\">\n  <table id=\"table7\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info7\">\n    <div class=\"infoboxtitle\">5215</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum5215</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX8\" data-id=\"192389.186\"
+        data-name=\"5217\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192389.186',
+        '5217', this)\">\n  <table id=\"table8\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info8\">\n    <div class=\"infoboxtitle\">5217</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum5217</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX9\" data-id=\"192393.186\"
+        data-name=\"6205\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192393.186',
+        '6205', this)\">\n  <table id=\"table9\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info9\">\n    <div class=\"infoboxtitle\">6205</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6205</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX10\" data-id=\"192394.186\"
+        data-name=\"6207\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192394.186',
+        '6207', this)\">\n  <table id=\"table10\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info10\">\n    <div class=\"infoboxtitle\">6207</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6207</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX11\" data-id=\"192395.186\"
+        data-name=\"6209\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192395.186',
+        '6209', this)\">\n  <table id=\"table11\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info11\">\n    <div class=\"infoboxtitle\">6209</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6209</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX12\" data-id=\"192398.186\"
+        data-name=\"6215\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192398.186',
+        '6215', this)\">\n  <table id=\"table12\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info12\">\n    <div class=\"infoboxtitle\">6215</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6215</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX13\" data-id=\"192540.186\"
+        data-name=\"Abadi\"  class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192540.186',
+        'Abadi', this)\">\n  <table id=\"table13\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info13\">\n    <div class=\"infoboxtitle\">Abadi</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>SV451 Abadi - hus Svea</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>Lindholmen</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+        \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+        round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+        \ </div>\n  </div>\n  \n  \n  <div id=\"objectbasketitemX14\" data-id=\"192646.186\"
+        data-name=\"Basic\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192646.186',
+        'Basic', this)\">\n  <table id=\"table14\" cellspacing=\"0\" class=\"infotable
+        infotablenormal\">\n    \n \t<td>\n \t<div id=\"info14\">\n    <div class=\"infoboxtitle\">Basic</div>
+        \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr> \n\t
+        \   <td class=\"columnname\">Lokalnamn</td>\n    \t<td>218 Basic - hus Patricia</td>\n\t
+        \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>Patricia
+        Lindholmen</td>\n\t  </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n
+        \   \t<td>Grupprum</td>\n\t  </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n
+        \ </tr></table>\n  <div class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+        class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n  \n
+        \ <div id=\"nextPage_o15\" style=\"display: none\"></div>\n    <span id=\"linksdata_o\"
+        data-linksbase=\"https://web.timeedit.se/chalmers_se/db1/b1/objects?max=15&amp;fr=t&amp;partajax=t&amp;im=f&amp;add=f&amp;sid=1002&amp;step=1&amp;grp=5&amp;types=186&amp;dates=20120301&amp;starttime=12%3A23&amp;endtime=23%3A59\"
+        class=\"hidden\"></span>\n      <p></p>\n      <div id=\"errorPage_o\" style=\"display:
+        none\"></div>\n      <div id=\"bottom_o\"></div>\n<div class=\"pageLinksWrap\">\n<a
+        id=\"nextPageButton_o\" href=\"javascript:PageLoaderNext_o();\" class=\"ui-corner-all
+        ui-state-default clickable loadNextPage\" data-text=\"Visa fler\">Visa fler</a>\n\n<span
+        id=\"pagesData_o\" data-pagesjson='{\"currentPage\":1,\"pages\":3,\"start\":0,\"max\":15,\"total\":33}'
+        class=\"hidden\"></span>\n</div>\n"
+      net_http_res: &70358371064840 !ruby/object:Net::HTTPOK
+        http_version: '1.0'
+        code: '200'
+        message: The request has succeeded
+        header:
+          server:
+          - nginx/0.7.62
+          date:
+          - Wed, 15 Feb 2012 02:49:48 GMT
+          content-type:
+          - text/html; charset=UTF-8
+          transfer-encoding:
+          - ''
+          - chunked
+          - chunked
+          connection:
+          - keep-alive
+          etag:
+          - ! '"-1801196402-1329233843423"'
+          vary:
+          - Accept-Charset, Accept-Encoding, Accept-Language, Accept
+          accept-ranges:
+          - bytes
+          cache-control:
+          - max-age=10, post-check=1, pre-check=2
+          x-timeedit-search:
+          - 232ms
+        body: !str
+          str: ! "\n\n  \n  <div id=\"objectbasketitemX0\" data-id=\"192372.186\"
+            data-name=\"3207\"  class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192372.186',
+            '3207', this)\">\n  <table id=\"table0\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info0\">\n    <div class=\"infoboxtitle\">3207</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3207</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX1\" data-id=\"192373.186\" data-name=\"3209\"
+            \ class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192373.186',
+            '3209', this)\">\n  <table id=\"table1\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info1\">\n    <div class=\"infoboxtitle\">3209</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3209</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX2\" data-id=\"192374.186\" data-name=\"3211\"
+            \ class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192374.186',
+            '3211', this)\">\n  <table id=\"table2\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info2\">\n    <div class=\"infoboxtitle\">3211</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3211</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX3\" data-id=\"192375.186\" data-name=\"3213\"
+            \ class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192375.186',
+            '3213', this)\">\n  <table id=\"table3\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info3\">\n    <div class=\"infoboxtitle\">3213</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum3213</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX4\" data-id=\"192381.186\" data-name=\"4205\"
+            \ class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192381.186',
+            '4205', this)\">\n  <table id=\"table4\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info4\">\n    <div class=\"infoboxtitle\">4205</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum4205</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX5\" data-id=\"192382.186\" data-name=\"4207\"
+            \ class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192382.186',
+            '4207', this)\">\n  <table id=\"table5\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info5\">\n    <div class=\"infoboxtitle\">4207</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum4207</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX6\" data-id=\"192387.186\" data-name=\"5213\"
+            \ class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192387.186',
+            '5213', this)\">\n  <table id=\"table6\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info6\">\n    <div class=\"infoboxtitle\">5213</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum5213</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX7\" data-id=\"192388.186\" data-name=\"5215\"
+            \ class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192388.186',
+            '5215', this)\">\n  <table id=\"table7\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info7\">\n    <div class=\"infoboxtitle\">5215</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum5215</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX8\" data-id=\"192389.186\" data-name=\"5217\"
+            \ class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192389.186',
+            '5217', this)\">\n  <table id=\"table8\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info8\">\n    <div class=\"infoboxtitle\">5217</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum5217</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX9\" data-id=\"192393.186\" data-name=\"6205\"
+            \ class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192393.186',
+            '6205', this)\">\n  <table id=\"table9\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info9\">\n    <div class=\"infoboxtitle\">6205</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6205</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX10\" data-id=\"192394.186\" data-name=\"6207\"
+            \ class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192394.186',
+            '6207', this)\">\n  <table id=\"table10\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info10\">\n    <div class=\"infoboxtitle\">6207</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6207</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX11\" data-id=\"192395.186\" data-name=\"6209\"
+            \ class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192395.186',
+            '6209', this)\">\n  <table id=\"table11\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info11\">\n    <div class=\"infoboxtitle\">6209</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6209</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX12\" data-id=\"192398.186\" data-name=\"6215\"
+            \ class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192398.186',
+            '6215', this)\">\n  <table id=\"table12\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info12\">\n    <div class=\"infoboxtitle\">6215</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>grupprum6215</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n    \t<td>EDIT-Huset</td>\n\t
+            \ </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t
+            \ </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div
+            class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX13\" data-id=\"192540.186\" data-name=\"Abadi\"
+            \ class=\"clickable2 searchObject  searchObjectEven\" onclick=\"addObjectToReservation('192540.186',
+            'Abadi', this)\">\n  <table id=\"table13\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info13\">\n    <div class=\"infoboxtitle\">Abadi</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>SV451 Abadi
+            - hus Svea</td>\n\t  </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n
+            \   \t<td>Lindholmen</td>\n\t  </tr>\n      <tr> \n\t    <td class=\"columnname\">Lokaltyp</td>\n
+            \   \t<td>Grupprum</td>\n\t  </tr>\n   \t</table>\n    \n\t</div>\n  </td>\n
+            \ </tr></table>\n  <div class=\"infolinkdiv round hidden\">\n  <span class=\"infolinks\"><span
+            class=\"ui-icon ui-icon-plusthick\"></span></span>\n  </div>\n  </div>\n
+            \ \n  \n  <div id=\"objectbasketitemX14\" data-id=\"192646.186\" data-name=\"Basic\"
+            \ class=\"clickable2 searchObject  \" onclick=\"addObjectToReservation('192646.186',
+            'Basic', this)\">\n  <table id=\"table14\" cellspacing=\"0\" class=\"infotable
+            infotablenormal\">\n    \n \t<td>\n \t<div id=\"info14\">\n    <div class=\"infoboxtitle\">Basic</div>
+            \n   \t<table cellspacing=\"0\" class=\"objectfieldsextra\">\n      <tr>
+            \n\t    <td class=\"columnname\">Lokalnamn</td>\n    \t<td>218 Basic -
+            hus Patricia</td>\n\t  </tr>\n      <tr> \n\t    <td class=\"columnname\">Byggnad</td>\n
+            \   \t<td>Patricia Lindholmen</td>\n\t  </tr>\n      <tr> \n\t    <td
+            class=\"columnname\">Lokaltyp</td>\n    \t<td>Grupprum</td>\n\t  </tr>\n
+            \  \t</table>\n    \n\t</div>\n  </td>\n  </tr></table>\n  <div class=\"infolinkdiv
+            round hidden\">\n  <span class=\"infolinks\"><span class=\"ui-icon ui-icon-plusthick\"></span></span>\n
+            \ </div>\n  </div>\n  \n  <div id=\"nextPage_o15\" style=\"display: none\"></div>\n
+            \   <span id=\"linksdata_o\" data-linksbase=\"https://web.timeedit.se/chalmers_se/db1/b1/objects?max=15&amp;fr=t&amp;partajax=t&amp;im=f&amp;add=f&amp;sid=1002&amp;step=1&amp;grp=5&amp;types=186&amp;dates=20120301&amp;starttime=12%3A23&amp;endtime=23%3A59\"
+            class=\"hidden\"></span>\n      <p></p>\n      <div id=\"errorPage_o\"
+            style=\"display: none\"></div>\n      <div id=\"bottom_o\"></div>\n<div
+            class=\"pageLinksWrap\">\n<a id=\"nextPageButton_o\" href=\"javascript:PageLoaderNext_o();\"
+            class=\"ui-corner-all ui-state-default clickable loadNextPage\" data-text=\"Visa
+            fler\">Visa fler</a>\n\n<span id=\"pagesData_o\" data-pagesjson='{\"currentPage\":1,\"pages\":3,\"start\":0,\"max\":15,\"total\":33}'
+            class=\"hidden\"></span>\n</div>\n"
+          net_http_res: *70358371064840
+          args: &70358372298060
+            :method: :get
+            :url: https://web.timeedit.se/chalmers_se/db1/b1/objects.html?max=15&fr=t&partajax=t&im=f&add=f&sid=1002&step=1&grp=5&types=186&dates=20120301&starttime=12%3A23&endtime=23%3A59
+            :headers:
+              :timeout: 5
+              :cookie: Path=/; TimeEditTICKETchalmers_sedb1=1afaf7182a14226e74e050d7ac3177a6-8292703774966679966
+          code: 200
+        read: true
+        __read_body_previously_called: true
+      args: *70358372298060
+      code: 200
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
@@ -2207,4 +2421,168 @@
       transfer-encoding:
       - ''
     body: https://web.timeedit.se/chalmers_se/db1/b1/r.html?sid=1002&id=205608&h=t&step=3&dates=20120301&startTime=12%3A23&endTime=23%3A59&o=203460.192%2C%C3%96vrigt&o=192388.186%2C5215&nocache=1329274188357&part=f&newres=t
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://web.timeedit.se:443/chalmers_se/db1/b1/r.html?cn=0&dates=20120301&endTime=23:59&h=t&id=-1&nocache=3&o=192373.186,3209&sid=1002&startTime=12:23&step=2
+    body: dates=20120301&endTime=23%3A59&fe2=&fe8=&id=-1&kind=reserve&startTime=12%3A23&url=https%3A%2F%2Fweb.timeedit.se%2Fchalmers_se%2Fdb1%2Fb1%2Fr.html%3Fsid%3D1002%26id%3D-1%26h%3Dt%26id%3D-1%26step%3D2%26cn%3D0%26id%3D-1%26dates%3D20120301%26startTime%3D12%253A23%26endTime%3D23%253A59%26o%3D203460.192%252C%25C3%2596vrigt%26o%3D192373.186%252C3209%26nocache%3D3&o=203460.192&o=192373.186
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+      timeout:
+      - '5'
+      cookie:
+      - Path=/; TimeEditTICKETchalmers_sedb1=1afaf7182a14226e74e050d7ac3177a6-8292703774966679966
+      content-length:
+      - '384'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: The request has succeeded
+    headers:
+      server:
+      - nginx/0.7.62
+      date:
+      - Wed, 15 Feb 2012 02:55:04 GMT
+      content-type:
+      - text/plain; charset=UTF-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"0419ca2dba73fa01bbdd55eb58d88d03"'
+      content-length:
+      - '213'
+      accept-ranges:
+      - bytes
+      cache-control:
+      - max-age=3, post-check=1, pre-check=2
+      transfer-encoding:
+      - ''
+    body: https://web.timeedit.se/chalmers_se/db1/b1/r.html?sid=1002&id=205609&h=t&step=3&dates=20120301&startTime=12%3A23&endTime=23%3A59&o=203460.192%2C%C3%96vrigt&o=192373.186%2C3209&nocache=1329274504939&part=f&newres=t
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://web.timeedit.se:443/chalmers_se/db1/b1/r.html?cn=0&dates=20120301&endTime=23:59&h=t&id=-1&nocache=3&o=192375.186,3213&sid=1002&startTime=12:23&step=2
+    body: dates=20120301&endTime=23%3A59&fe2=&fe8=&id=-1&kind=reserve&startTime=12%3A23&url=https%3A%2F%2Fweb.timeedit.se%2Fchalmers_se%2Fdb1%2Fb1%2Fr.html%3Fsid%3D1002%26id%3D-1%26h%3Dt%26id%3D-1%26step%3D2%26cn%3D0%26id%3D-1%26dates%3D20120301%26startTime%3D12%253A23%26endTime%3D23%253A59%26o%3D203460.192%252C%25C3%2596vrigt%26o%3D192375.186%252C3213%26nocache%3D3&o=203460.192&o=192375.186
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+      timeout:
+      - '5'
+      cookie:
+      - Path=/; TimeEditTICKETchalmers_sedb1=1afaf7182a14226e74e050d7ac3177a6-8292703774966679966
+      content-length:
+      - '384'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: The request has succeeded
+    headers:
+      server:
+      - nginx/0.7.62
+      date:
+      - Wed, 15 Feb 2012 02:55:22 GMT
+      content-type:
+      - text/plain; charset=UTF-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"e530e6ed500f7cb7ffbabbd163fccf98"'
+      content-length:
+      - '213'
+      accept-ranges:
+      - bytes
+      cache-control:
+      - max-age=3, post-check=1, pre-check=2
+      transfer-encoding:
+      - ''
+    body: https://web.timeedit.se/chalmers_se/db1/b1/r.html?sid=1002&id=205610&h=t&step=3&dates=20120301&startTime=12%3A23&endTime=23%3A59&o=203460.192%2C%C3%96vrigt&o=192375.186%2C3213&nocache=1329274522234&part=f&newres=t
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://web.timeedit.se:443/chalmers_se/db1/b1/r.html?cn=0&dates=20120301&endTime=23:59&h=t&id=-1&nocache=3&o=192540.186,Abadi&sid=1002&startTime=12:23&step=2
+    body: dates=20120301&endTime=23%3A59&fe2=&fe8=&id=-1&kind=reserve&startTime=12%3A23&url=https%3A%2F%2Fweb.timeedit.se%2Fchalmers_se%2Fdb1%2Fb1%2Fr.html%3Fsid%3D1002%26id%3D-1%26h%3Dt%26id%3D-1%26step%3D2%26cn%3D0%26id%3D-1%26dates%3D20120301%26startTime%3D12%253A23%26endTime%3D23%253A59%26o%3D203460.192%252C%25C3%2596vrigt%26o%3D192540.186%252CAbadi%26nocache%3D3&o=203460.192&o=192540.186
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+      timeout:
+      - '5'
+      cookie:
+      - Path=/; TimeEditTICKETchalmers_sedb1=1afaf7182a14226e74e050d7ac3177a6-8292703774966679966
+      content-length:
+      - '385'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: The request has succeeded
+    headers:
+      server:
+      - nginx/0.7.62
+      date:
+      - Wed, 15 Feb 2012 03:03:52 GMT
+      content-type:
+      - text/plain; charset=UTF-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"ebd0a05e7c4756e08227fb838a2cd196"'
+      content-length:
+      - '214'
+      accept-ranges:
+      - bytes
+      cache-control:
+      - max-age=3, post-check=1, pre-check=2
+      transfer-encoding:
+      - ''
+    body: https://web.timeedit.se/chalmers_se/db1/b1/r.html?sid=1002&id=205611&h=t&step=3&dates=20120301&startTime=12%3A23&endTime=23%3A59&o=203460.192%2C%C3%96vrigt&o=192540.186%2CAbadi&nocache=1329275032057&part=f&newres=t
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://web.timeedit.se:443/chalmers_se/db1/b1/r.html?cn=0&dates=20120301&endTime=23:59&h=t&id=-1&nocache=3&o=192646.186,Basic&sid=1002&startTime=12:23&step=2
+    body: dates=20120301&endTime=23%3A59&fe2=&fe8=&id=-1&kind=reserve&startTime=12%3A23&url=https%3A%2F%2Fweb.timeedit.se%2Fchalmers_se%2Fdb1%2Fb1%2Fr.html%3Fsid%3D1002%26id%3D-1%26h%3Dt%26id%3D-1%26step%3D2%26cn%3D0%26id%3D-1%26dates%3D20120301%26startTime%3D12%253A23%26endTime%3D23%253A59%26o%3D203460.192%252C%25C3%2596vrigt%26o%3D192646.186%252CBasic%26nocache%3D3&o=203460.192&o=192646.186
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+      timeout:
+      - '5'
+      cookie:
+      - Path=/; TimeEditTICKETchalmers_sedb1=1afaf7182a14226e74e050d7ac3177a6-8292703774966679966
+      content-length:
+      - '385'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: The request has succeeded
+    headers:
+      server:
+      - nginx/0.7.62
+      date:
+      - Wed, 15 Feb 2012 03:04:30 GMT
+      content-type:
+      - text/plain; charset=UTF-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"f498321f265da050309aadb86de81066"'
+      content-length:
+      - '214'
+      accept-ranges:
+      - bytes
+      cache-control:
+      - max-age=3, post-check=1, pre-check=2
+      transfer-encoding:
+      - ''
+    body: https://web.timeedit.se/chalmers_se/db1/b1/r.html?sid=1002&id=205612&h=t&step=3&dates=20120301&startTime=12%3A23&endTime=23%3A59&o=203460.192%2C%C3%96vrigt&o=192646.186%2CBasic&nocache=1329275070429&part=f&newres=t
     http_version: '1.1'

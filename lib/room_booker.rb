@@ -27,7 +27,7 @@ class RoomBooker
   # @return Bool Did everything went okay?
   #
   def book!(room)
-    found_id = @rooms.select{ |r| r[:number] == room }.first
+    found_id = raw_rooms.select{ |r| r[:number] == room }.first
     raise "invalid room" unless found_id
     id = found_id[:id]
         
@@ -72,7 +72,29 @@ class RoomBooker
   # @return Array<String> A list of rooms ["1234"]
   #
   def rooms
-    return room_numbers if @rooms
+    @_rooms ||= raw_rooms.map{ |room| room[:number] }
+  end
+  
+  #
+  # @return Bool Is the given username and password valid?
+  #
+  def valid_credentials?
+    authenticate.any?
+  end
+  
+  #
+  # @date String | Time
+  #
+  def date=(date)
+    @date = date
+  end
+private
+
+  def raw_rooms
+    @_raw_rooms ||= fetch_rooms!
+  end
+  
+  def fetch_rooms!
     url = %w{
       https://web.timeedit.se/chalmers_se/db1/b1/objects.html?
       max=15&
@@ -90,33 +112,13 @@ class RoomBooker
     }.join % [date, hour_from, hour_to].map { |x| CGI.escape(x) }
     
     doc = Nokogiri::HTML(RestClient.get(url, cookies: authenticate, timeout: 5))
-    @rooms = doc.css(".infoboxtitle").map do |r| 
+    doc.css(".infoboxtitle").map do |r| 
       # Room number "5210"
       number = r.text
       # Room object id 1224631.186
       id = doc.at_css("[data-name='#{number}']").attr("data-id")
       {id: id, number: number}
-    end
-    
-    return room_numbers
-  end
-  
-  #
-  # @return Bool Is the given username and password valid?
-  #
-  def valid_credentials?
-    authenticate.any?
-  end
-  
-  #
-  # @date String | Time
-  #
-  def date=(date)
-    @date = date
-  end
-private
-  def room_numbers
-    @rooms.map{ |room| room[:number] }
+    end    
   end
   
   def date

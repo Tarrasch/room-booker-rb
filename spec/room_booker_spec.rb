@@ -86,6 +86,20 @@ describe RoomBooker do
         
         rb.rooms
         lambda { rb.book!("non-existing-room") }.should raise_error(RuntimeError, "invalid room")
+      end      
+    end
+    
+    it "should be possible to use #book! without calling #rooms" do
+      VCR.use_cassette("invalid3") do
+        rb = RoomBooker.new({
+          from: "1",
+          to: "2",
+          date: Time.now,
+          password: $password,
+          username: $username
+        })
+      
+        lambda { rb.book!("non-existing-room") }.should raise_error(RuntimeError, "invalid room")
       end
     end
     
