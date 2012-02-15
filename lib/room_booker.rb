@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+
 require "rest-client"
 require "nokogiri"
 require "cgi"
@@ -28,10 +30,11 @@ class RoomBooker
     found_id = @rooms.select{ |r| r[:number] == room }.first
     raise "invalid room" unless found_id
     id = found_id[:id]
-    
+        
     url = %w{
-      https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/r.html?
+      https://web.timeedit.se/chalmers_se/db1/b1/r.html?
       sid=1002&
+      id=-1&
       h=t&
       id=-1&
       step=2&
@@ -42,14 +45,12 @@ class RoomBooker
       endTime=%s&
       o=%s&
       o=%s&
-      o=%s&
       nocache=3
     }.join % [
       date,
       hour_from, 
       hour_to, 
-      "160177.184,pr101", 
-      "203433.185,ks91084", 
+      "203460.192,Övrigt", 
       "#{id},#{room}"
     ].map { |x| CGI.escape(x) }
     
@@ -62,7 +63,7 @@ class RoomBooker
       kind: "reserve",
       startTime: hour_from,
       url: url,
-    }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=160177.184&o=203433.185&o=#{id}"
+    }.each_pair.map{|index, value| "#{index}=#{CGI.escape(value.to_s)}"}.join("&") + "&o=203460.192&o=#{id}"
 
     !! RestClient.post(url, post_data, cookies: authenticate, timeout: 5)
   end
@@ -73,7 +74,7 @@ class RoomBooker
   def rooms
     return room_numbers if @rooms
     url = %w{
-      https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/objects.html?
+      https://web.timeedit.se/chalmers_se/db1/b1/objects.html?
       max=15&
       fr=t&
       partajax=t&
@@ -82,13 +83,12 @@ class RoomBooker
       sid=1002&
       step=1&
       grp=5&
-      objects=160177.184,203433.185&
       types=186&
       dates=%s&
       starttime=%s&
       endtime=%s
     }.join % [date, hour_from, hour_to].map { |x| CGI.escape(x) }
-
+    
     doc = Nokogiri::HTML(RestClient.get(url, cookies: authenticate, timeout: 5))
     @rooms = doc.css(".infoboxtitle").map do |r| 
       # Room number "5210"
@@ -116,7 +116,7 @@ class RoomBooker
   end
 private
   def room_numbers
-    @rooms.map{|room| room[:number]}
+    @rooms.map{ |room| room[:number] }
   end
   
   def date
