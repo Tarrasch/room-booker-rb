@@ -112,7 +112,7 @@ describe RoomBooker do
           username: $username
         })
         
-        room = rb.rooms.sample
+        room = rb.rooms.first
         rb.book!(room).should be_true
       end
     end

@@ -1301,7 +1301,7 @@
             fler\">Visa fler</a>\n\n<span id=\"pagesData_o\" data-pagesjson='{\"currentPage\":1,\"pages\":3,\"start\":0,\"max\":15,\"total\":39}'
             class=\"hidden\"></span>\n</div>\n"
           net_http_res: !!null 
-          args: &70358371379180
+          args: &70104279033940
             :method: :get
             :url: https://web.timeedit.se/chalmers_se/db1/timeedit/p/b1/objects.html?max=15&fr=t&partajax=t&im=f&add=f&sid=1002&step=1&grp=5&objects=160177.184,203433.185&types=186&dates=20120201&starttime=12%3A23&endtime=23%3A59
             :headers:
@@ -1310,7 +1310,7 @@
           code: 200
         read: true
         __read_body_previously_called: true
-      args: *70358371379180
+      args: *70104279033940
       code: 200
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
@@ -2167,7 +2167,7 @@
         ui-state-default clickable loadNextPage\" data-text=\"Visa fler\">Visa fler</a>\n\n<span
         id=\"pagesData_o\" data-pagesjson='{\"currentPage\":1,\"pages\":3,\"start\":0,\"max\":15,\"total\":33}'
         class=\"hidden\"></span>\n</div>\n"
-      net_http_res: &70358371064840 !ruby/object:Net::HTTPOK
+      net_http_res: &70104278429460 !ruby/object:Net::HTTPOK
         http_version: '1.0'
         code: '200'
         message: The request has succeeded
@@ -2368,8 +2368,8 @@
             class=\"ui-corner-all ui-state-default clickable loadNextPage\" data-text=\"Visa
             fler\">Visa fler</a>\n\n<span id=\"pagesData_o\" data-pagesjson='{\"currentPage\":1,\"pages\":3,\"start\":0,\"max\":15,\"total\":33}'
             class=\"hidden\"></span>\n</div>\n"
-          net_http_res: *70358371064840
-          args: &70358372298060
+          net_http_res: *70104278429460
+          args: &70104278709940
             :method: :get
             :url: https://web.timeedit.se/chalmers_se/db1/b1/objects.html?max=15&fr=t&partajax=t&im=f&add=f&sid=1002&step=1&grp=5&types=186&dates=20120301&starttime=12%3A23&endtime=23%3A59
             :headers:
@@ -2378,7 +2378,7 @@
           code: 200
         read: true
         __read_body_previously_called: true
-      args: *70358372298060
+      args: *70104278709940
       code: 200
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
@@ -2585,4 +2585,45 @@
       transfer-encoding:
       - ''
     body: https://web.timeedit.se/chalmers_se/db1/b1/r.html?sid=1002&id=205612&h=t&step=3&dates=20120301&startTime=12%3A23&endTime=23%3A59&o=203460.192%2C%C3%96vrigt&o=192646.186%2CBasic&nocache=1329275070429&part=f&newres=t
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://web.timeedit.se:443/chalmers_se/db1/b1/r.html?cn=0&dates=20120301&endTime=23:59&h=t&id=-1&nocache=3&o=192372.186,3207&sid=1002&startTime=12:23&step=2
+    body: dates=20120301&endTime=23%3A59&fe2=&fe8=&id=-1&kind=reserve&startTime=12%3A23&url=https%3A%2F%2Fweb.timeedit.se%2Fchalmers_se%2Fdb1%2Fb1%2Fr.html%3Fsid%3D1002%26id%3D-1%26h%3Dt%26id%3D-1%26step%3D2%26cn%3D0%26id%3D-1%26dates%3D20120301%26startTime%3D12%253A23%26endTime%3D23%253A59%26o%3D203460.192%252C%25C3%2596vrigt%26o%3D192372.186%252C3207%26nocache%3D3&o=203460.192&o=192372.186
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+      timeout:
+      - '5'
+      cookie:
+      - Path=/; TimeEditTICKETchalmers_sedb1=1afaf7182a14226e74e050d7ac3177a6-8292703774966679966
+      content-length:
+      - '384'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: The request has succeeded
+    headers:
+      server:
+      - nginx/0.7.62
+      date:
+      - Wed, 15 Feb 2012 03:05:42 GMT
+      content-type:
+      - text/plain; charset=UTF-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"aa4164983391bc7ac584b55e77b44730"'
+      content-length:
+      - '213'
+      accept-ranges:
+      - bytes
+      cache-control:
+      - max-age=3, post-check=1, pre-check=2
+      transfer-encoding:
+      - ''
+    body: https://web.timeedit.se/chalmers_se/db1/b1/r.html?sid=1002&id=205613&h=t&step=3&dates=20120301&startTime=12%3A23&endTime=23%3A59&o=203460.192%2C%C3%96vrigt&o=192372.186%2C3207&nocache=1329275142762&part=f&newres=t
     http_version: '1.1'
