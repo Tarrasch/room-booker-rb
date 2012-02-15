@@ -123,7 +123,7 @@ job "reserve.by" do |args|
     
     if room 
       begin
-        # rb.book!(room)
+        rb.book!(room)
       rescue
         message ||= $!.message || "Something went wrong"
       ensure
