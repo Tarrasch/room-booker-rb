@@ -32,7 +32,7 @@ class RoomBooker
   # Like book! but doesn't throw
   #
   # @room String The room that should be booked
-  # @return Bool Did everything went okay? Will also return true on RestClient::Exception
+  # @return Bool Did everything went okay? Will also return false on RestClient::Exception
   #
   def book_safe!(room)
     book! room
