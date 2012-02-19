@@ -26,7 +26,7 @@ int = roomss.inject(:&)
 puts "The following intersection was found: "
 p int
 
-puts "Sorry, nothing to book" && exit if int.empty?
+abort("Sorry, nothing to book") if int.empty?
 
 puts "Enter [#room|exit|all!]"
 input = ""
